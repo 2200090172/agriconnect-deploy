@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Adminlayout from './Adminlayout';
 import './Addfarmer.css';
+import axios from 'axios';
+
 
 const Addfarmer = () => {
   const initialFormState = {
@@ -15,6 +17,7 @@ const Addfarmer = () => {
   };
 
   const [farmer, setFarmer] = useState(initialFormState);
+  const[message,setMessage]=useState("")
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,10 +27,32 @@ const Addfarmer = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Farmer added successfully");
-    console.log(farmer);
+   try{
+    const response= await axios.post("http://localhost:2005/addfarmer",farmer);
+    if(message.status==200)
+    {
+      alert("Farmer Added Successfully!");
+      setFarmer({
+        fullname: '',
+          email: '',
+          phone: '',
+          password: '',
+          location: '',
+          farmsize: '',
+          crops: '',
+          preferredlanguage: '',
+      })
+      alert("Farmer Added Successfully!!")
+    }
+   }
+   catch(error)
+   {
+    console.log(error.message);
+    alert(error.message);
+   }
+    
     setFarmer(initialFormState);
   };
 

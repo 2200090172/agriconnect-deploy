@@ -1,0 +1,72 @@
+.approve-expert-container {
+    min-height: 100vh;
+    background: url(../../assets/images/admin-home.jpg) no-repeat center center / cover;
+    position: relative;
+  }
+  
+  .approve-expert-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .approve-expert-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    color: #333;
+  }
+  
+  th {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  /* Action spans styled as buttons */
+  .approve-expert-accept,
+  .approve-expert-reject {
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .approve-expert-accept {
+    background-color: #4caf50; 
+  }
+  
+  .approve-expert-reject {
+    background-color: #f44336; 
+  }
+  
+  .approve-expert-accept:hover,
+  .approve-expert-reject:hover {
+    opacity: 0.8;
+  }
+  

@@ -1,7 +1,6 @@
 .viewallsectors-container {
   min-height: 100vh;
-  background: url(../../assets/images/admin-home.jpg) no-repeat center center / cover; /* Update the path to your background image */
-  position: relative;
+  background: url(../../assets/images/admin-home.jpg) no-repeat center center / cover; 
 }
   
 .viewallsectors-overlay {
@@ -10,21 +9,21 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Increased opacity for better contrast */
+  background-color: rgba(0, 0, 0, 0.7); 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.viewallsectors-content { /* Updated class name */
-  background-color: rgba(255, 255, 255, 0.8); /* Light background for table */
-  border-radius: 8px; /* Rounded corners for better aesthetics */
-  padding: 20px; /* Padding for the container */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+.viewallsectors-content { 
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 8px; 
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 h2 {
-  color: #333; /* Darker color for the header */
+  color: #333; 
   margin-bottom: 20px;
 }
 
@@ -37,10 +36,10 @@ th, td {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: left;
-  color: #333; /* Dark text color for better readability */
+  color: #333; 
 }
   
 th {
-  background-color: #4caf50; /* Green background for headers */
-  color: white; /* White text for header */
+  background-color: #4caf50; 
+  color: white; 
 }

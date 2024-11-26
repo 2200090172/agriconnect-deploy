@@ -115,12 +115,12 @@
 
 
 
-.expert-header {
+/* .expert-header {
   min-height: 100vh;
   width: 100%;
   background: url(../../assets/images/expert-background.jpg) no-repeat top center / cover;
   position: relative;
-}
+} */
 
  .admin-overlay {
    position: absolute;

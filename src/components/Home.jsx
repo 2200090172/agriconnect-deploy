@@ -1,109 +1,10 @@
-
-// import React, { useState } from "react";
-// import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
-// import "./Home.css";
-// import Adminsignin from "./signin/Adminsignin";
-// import Farmersignin from "./signin/Farmersignin";
-// import Publicsignin from "./signin/Publicsignin";
-// import Expertsigin from "./signin/Expertsignin";
-
-// const Home = () => {
-//   const [isActive, setIsActive] = useState(false);
-
-//   const toggleMenu = () => {
-//     setIsActive(!isActive);
-//   };
-
-//   return (
-//     <BrowserRouter>
-//       <div className={`container ${isActive ? "active" : ""}`}>
-//         <div className="navbar">
-//           <div className="menu">
-//             <h3 className="logo">
-//               Agri<span>Connect</span>
-//             </h3>
-//             <div className="hamburger-menu" onClick={toggleMenu}>
-//               <div className="bar"></div>
-//             </div>
-//           </div>
-//         </div>
-//         <div className="main-container">
-//           <div className="main">
-//             <header>
-//               <div className="overlay">
-//                 <h2 className="title">Empowering Farmers for a Sustainable Future</h2>
-//                 <p className="description">
-//                   “Together, we can cultivate success and resilience through knowledge, innovation, and community.”
-//                 </p>
-//                 <a href="#" className="btn">
-//                   Read More
-//                 </a>
-//               </div>
-//             </header>
-//           </div>
-//           <div className="shadow one"></div>
-//           <div className="shadow two"></div>
-//         </div>
-//         <div className="links">
-//           <ul>
-//             <li className="active">
-//               <a href="#" style={{ "--i": "0.05s" }}>
-//                 Home
-//               </a>
-//             </li>
-//             <li>
-//               <a href="#" style={{ "--i": "0.1s" }}>
-//                 About
-//               </a>
-//             </li>
-//             <li>
-//               <Link to="/adminsignin" style={{ "--i": "0.15s" }}>
-//                 Sign In as Admin
-//               </Link>
-//             </li>
-//             <li>
-//               <Link to="/farmersignin" style={{ "--i": "0.2s" }}>
-//                 Sign In as Farmer
-//               </Link>
-//             </li>
-//             <li>
-//               <Link to="/publicsignin" style={{ "--i": "0.25s" }}>
-//                 Sign In as Public
-//               </Link>
-//             </li>
-//             <li>
-//               <Link to="/expertsigin" style={{ "--i": "0.25s" }}>
-//                 Sign In as Expert
-//               </Link>
-//             </li>
-//           </ul>
-//         </div>
-//       </div>
-//       <Routes>
-//         <Route path="/adminsignin" element={<Adminsignin />} />
-//         <Route path="/farmersignin" element={<Farmersignin />} />
-//         <Route path="/publicsignin" element={<Publicsignin />} />
-//         <Route path="/expertsigin" element={<Expertsigin />} />
-//       </Routes>
-//     </BrowserRouter>
-//   );
-// };
-
-// export default Home;
-
-
 import React, { useState } from "react";
 import { Route, Routes, Link } from 'react-router-dom';
 import "./Home.css";
-import Adminsignin from "./signin/Adminsignin";
-import Farmersignin from "./signin/Farmersignin";
-import Publicsignin from "./signin/Publicsignin";
-import Expertsigin from "./signin/Expertsignin";
-import Landingpage from "./signin/Landingpage";
-import backgroundImage from '../assets/images/background.jpg'; 
 
+// import backgroundImage from '../assets/images/background.jpg'; 
 
-const Home = () => {
+const Home = ({children}) => {
   const [isActive, setIsActive] = useState(false);
 
   const toggleMenu = () => {
@@ -111,39 +12,39 @@ const Home = () => {
   };
 
   return (
-    
-    <div className={`container ${isActive ? "active" : ""}`}
-    style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <div className="navbar">
-        <div className="menu">
-          <h3 className="logo">
+    <div className={`home-container ${isActive ? "home-active" : ""}`}
+    // style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <div className="home-navbar">
+        <div className="home-menu">
+          <h3 className="home-logo">
             Agri<span>Connect</span>
           </h3>
-          <div className="hamburger-menu" onClick={toggleMenu}>
-            <div className="bar"></div>
+          <div className="home-hamburger-menu" onClick={toggleMenu}>
+            <div className="home-bar"></div>
           </div>
         </div>
       </div>
-      <div className="main-container">
-        <div className="main">
+      <div className="home-main-container">
+        <div className="home-main">
           <header className="home-header">
-            <div className="overlay">
-              <h2 className="title">Empowering Farmers for a Sustainable Future</h2>
-              <p className="description">
+            <div className="home-overlay">
+              <h2 className="home-title">Empowering Farmers for a Sustainable Future</h2>
+              <p className="home-description">
                 “Together, we can cultivate success and resilience through knowledge, innovation, and community.”
               </p>
-              {/* <a href="#" className="btn">
+              {/* <a href="#" className="home-btn">
                 Read More
               </a> */}
             </div>
           </header>
         </div>
-        <div className="shadow one"></div>
-        <div className="shadow two"></div>
+        <div className="home-shadow home-one"></div>
+        <div className="home-shadow home-two"></div>
       </div>
-      <div className="links">
+      <div className="home-links">
         <ul>
-          <li className="active">
+          <li>
             <a href="/" style={{ "--i": "0.05s" }}>
               Home
             </a>
@@ -175,9 +76,7 @@ const Home = () => {
           </li>
         </ul>
       </div>
-      
     </div>
-    
   );
 };
 

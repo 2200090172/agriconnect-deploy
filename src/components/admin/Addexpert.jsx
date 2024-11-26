@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Adminlayout from './Adminlayout';
 import './Addexpert.css'; // Include your form styling here
+import axios from 'axios';
 
 const Addexpert = () => {
   const [expert, setExpert] = useState({
@@ -10,7 +11,7 @@ const Addexpert = () => {
     experience: '',
     fieldofexpertise: '',
     qualification: '',
-    languagesSpoken: '',
+    languagesspoken: '', // Changed to match expected format
     certifications: '', // New field for certifications
   });
 
@@ -22,21 +23,34 @@ const Addexpert = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Expert added successfully");
-    console.log(expert);
-    setExpert({
-      fullname: '',
-      email: '',
-      phone: '',
-      experience: '',
-      fieldofexpertise: '',
-      qualification: '',
-      languagesSpoken: '',
-      certifications: '', // Clear the certifications field on submit
-    });
-  };
+    try {
+      const response = await axios.post("http://localhost:2005/addexpert", expert);
+      
+      if (response.data === 1) {
+        alert("Expert added successfully");
+        // Reset the form fields
+        setExpert({
+          fullname: '',
+          email: '',
+          password:'',
+          phone: '',
+          experience: '',
+          fieldofexpertise: '',
+          qualification: '',
+          languagesspoken: '',
+          certifications: '',
+        });
+      } else {
+        alert("Failed to add expert. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error adding expert:", error);
+      alert("An error occurred: " + error.message);
+    }
+};
+
 
   return (
     <Adminlayout>
@@ -51,6 +65,10 @@ const Addexpert = () => {
             <div>
               <label>Email:</label>
               <input type="email" name="email" value={expert.email} onChange={handleChange} required />
+            </div>
+            <div>
+              <label>Password:</label>
+              <input type="password" name="password" value={expert.password} onChange={handleChange} required />
             </div>
             <div>
               <label>Phone:</label>
@@ -70,12 +88,12 @@ const Addexpert = () => {
             </div>
             <div>
               <label>Languages Spoken:</label>
-              <input type="text" name="languagesSpoken" value={expert.languagesSpoken} onChange={handleChange} required />
+              <input type="text" name="languagesspoken" value={expert.languagesspoken} onChange={handleChange} required />
             </div>
-            {/* <div>
+            <div>
               <label>Certifications:</label>
               <input type="text" name="certifications" value={expert.certifications} onChange={handleChange} />
-            </div> */}
+            </div>
             <button type="submit">Sign Up</button>
           </form>
         </div>

@@ -1,21 +1,17 @@
-/* General Styling */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
 }
 
-/* About Page Styling */
 .about-page {
     text-align: center;
     color: #fff;
     background-color: #000;
     min-height: 100vh;
-    padding-top: 60px; /* Adjust for navbar */
+    padding-top: 60px;
 }
 
-
-/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -35,7 +31,7 @@ body {
 }
 
 .logo span {
-    color: #ff3b3f; /* Highlight part of the logo */
+    color: #ff3b3f;
 }
 
 .nav-links {
@@ -62,7 +58,6 @@ body {
     border-radius: 4px;
 }
 
-/* Hero Section Styling */
 .hero-section {
     height: 100vh;
     display: flex;
@@ -70,13 +65,12 @@ body {
     align-items: center;
     text-align: center;
     color: #fff;
-   
     position: relative;
 }
 
 .hero-content {
     max-width: 600px;
-    background-color: rgba(0, 0, 0, 0.7); /* Transparent background */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 40px;
     border-radius: 10px;
 }
@@ -109,13 +103,12 @@ body {
     background-color: #e12a2d;
 }
 
-/* Dashboard Section (for logged-in users) */
 .dashboard-container {
     padding: 50px 20px;
     background-color: #fff;
     color: #333;
     text-align: center;
-    margin-top: 40px; /* Space above the dashboard */
+    margin-top: 40px;
 }
 
 .dashboard-container h2 {
@@ -146,7 +139,6 @@ body {
     background-color: #45a049;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 36px;

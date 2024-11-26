@@ -11,7 +11,7 @@ body {
   overflow: hidden;
 }
 
-.container {
+.home-container {
   max-height: 100vh;
   width: 100%;
   background-color: #131414;
@@ -20,7 +20,7 @@ body {
   overflow: hidden;
 }
 
-.navbar {
+.home-navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -29,7 +29,7 @@ body {
   height: 5rem;
 }
 
-.menu {
+.home-menu {
   max-width: 72rem;
   width: 100%;
   height: 100%;
@@ -41,7 +41,7 @@ body {
   color: #fff;
 }
 
-.logo {
+.home-logo {
   font-size: 1.8rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -50,13 +50,13 @@ body {
   margin-top: 20px;
 }
 
-.logo span {
+.home-logo span {
   font-size: 1.8rem;
   margin-left: 5px;
   color: #e20f2f;
 }
 
-.hamburger-menu {
+.home-hamburger-menu {
   height: 4rem;
   width: 3rem;
   cursor: pointer;
@@ -65,7 +65,7 @@ body {
   justify-content: flex-end;
 }
 
-.bar {
+.home-bar {
   width: 1.9rem;
   height: 1.5px;
   border-radius: 2px;
@@ -74,8 +74,8 @@ body {
   position: relative;
 }
 
-.bar::before,
-.bar::after {
+.home-bar::before,
+.home-bar::after {
   content: "";
   position: absolute;
   width: inherit;
@@ -84,19 +84,19 @@ body {
   transition: 0.5s;
 }
 
-.bar::before {
+.home-bar::before {
   transform: translateY(-9px);
 }
 
-.bar::after {
+.home-bar::after {
   transform: translateY(9px);
 }
 
-.main-container {
+.home-main-container {
   overflow: hidden;
 }
 
-.main {
+.home-main {
   position: relative;
   width: 100%;
   left: 0;
@@ -106,23 +106,15 @@ body {
   transform-style: preserve-3d;
   transition: 0.5s;
 }
-/* 
-header {
-  min-height: 100vh;
-  width: 100%;
-  background: url("https://i.postimg.cc/0Q09GwLQ/image.jpg") no-repeat top center / cover;
-  position: relative;
-} */
 
 .home-header {
     min-height: 100vh;
     width: 100%;
     background: url(../assets/images/background.jpg) no-repeat top center / cover;
     position: relative;
-  }
-  
+}
 
-.overlay {
+.home-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -136,26 +128,26 @@ header {
   color: #fff;
 }
 
-.inner {
+.home-inner {
   max-width: 35rem;
   text-align: center;
   color: #fff;
   padding: 0 2rem;
 }
 
-.title {
+.home-title {
   font-size: 3rem;
   color: #fff;
 }
 
-.description {
+.home-description {
   margin: 10px 0;
   text-align: center;
   width: 50%;
   font-size: 1.5rem;
 }
 
-.btn {
+.home-btn {
   margin-top: 1rem;
   padding: 0.6rem 1.8rem;
   background-color: #e20f2f;
@@ -167,26 +159,26 @@ header {
   text-decoration: none;
 }
 
-.container.active .bar {
+.home-container.home-active .home-bar {
   transform: rotate(360deg);
   background-color: transparent;
 }
 
-.container.active .bar::before {
+.home-container.home-active .home-bar::before {
   transform: translateY(0) rotate(45deg);
 }
 
-.container.active .bar::after {
+.home-container.home-active .home-bar::after {
   transform: translateY(0) rotate(-45deg);
 }
 
-.container.active .main {
-  animation: main-animation 0.5s ease;
+.home-container.home-active .home-main {
+  animation: home-main-animation 0.5s ease;
   cursor: pointer;
   transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(310px) scale(0.5);
 }
 
-@keyframes main-animation {
+@keyframes home-main-animation {
   from {
     transform: translate(0);
   }
@@ -195,7 +187,7 @@ header {
   }
 }
 
-.links {
+.home-links {
   position: absolute;
   width: 30%;
   right: 0;
@@ -209,15 +201,15 @@ header {
   margin-left: 10px;
 }
 
-ul {
+.home-ul {
   list-style: none;
 }
 
-ul li.active a {
+.home-ul li.active a {
   color: #e20f2f;
 }
 
-.links a {
+.home-links a {
   text-decoration: none;
   color: #eee;
   padding: 0.7rem 0;
@@ -229,18 +221,18 @@ ul li.active a {
   transition: 0.3s;
   opacity: 0;
   transform: translateY(10px);
-  animation: hide 0.5s forwards ease;
+  animation: home-hide 0.5s forwards ease;
 }
 
-.links a:hover {
+.home-links a:hover {
   color: #e20f2f;
 }
 
-.container.active .links a {
-  animation: appear 0.5s forwards ease var(--i);
+.home-container.home-active .home-links a {
+  animation: home-appear 0.5s forwards ease var(--i);
 }
 
-@keyframes appear {
+@keyframes home-appear {
   from {
     opacity: 0;
     transform: translateY(10px);
@@ -251,7 +243,7 @@ ul li.active a {
   }
 }
 
-@keyframes hide {
+@keyframes home-hide {
   from {
     opacity: 1;
     transform: translateY(0px);
@@ -262,7 +254,7 @@ ul li.active a {
   }
 }
 
-.shadow {
+.home-shadow {
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -274,22 +266,22 @@ ul li.active a {
   background-color: #fff;
 }
 
-.shadow.one {
+.home-shadow.home-one {
   z-index: -1;
   opacity: 0.15;
 }
 
-.shadow.two {
+.home-shadow.home-two {
   z-index: -2;
   opacity: 0.1;
 }
 
-.container.active .shadow.one {
-  animation: shadow-one 0.6s ease-out;
+.home-container.home-active .home-shadow.home-one {
+  animation: home-shadow-one 0.6s ease-out;
   transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(215px) scale(0.5);
 }
 
-@keyframes shadow-one {
+@keyframes home-shadow-one {
   0% {
     transform: translate(0);
   }
@@ -301,12 +293,12 @@ ul li.active a {
 }
 }
 
-.container.active .shadow.two {
-animation: shadow-two 0.6s ease-out;
+.home-container.home-active .home-shadow.home-two {
+animation: home-shadow-two 0.6s ease-out;
 transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(120px) scale(0.5);
 }
 
-@keyframes shadow-two {
+@keyframes home-shadow-two {
 0% {
   transform: translate(0);
 }
@@ -318,10 +310,10 @@ transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(120px)
 }
 }
 
-.container.active .main:hover + .shadow.one {
+.home-container.home-active .home-main:hover + .home-shadow.home-one {
 transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(230px) scale(0.5);
 }
 
-.container.active .main:hover {
+.home-container.home-active .home-main:hover {
 transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(340px) scale(0.5);
 }

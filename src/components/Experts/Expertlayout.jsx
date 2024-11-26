@@ -34,23 +34,23 @@ const Expertlayout = ({ children }) => {
       <div className="expert-links">
         <ul>
           <li>
-            <NavLink to="/farmerhome" activeClassName="active" style={{ "--i": "0.25s" }}>
+            <NavLink to="/experthome" activeClassName="active" style={{ "--i": "0.25s" }}>
               My Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/sendrequest" activeClassName="active" style={{ "--i": "0.15s" }}>
-              Send Suggestion Request
+            <NavLink to="/expertinrequests" activeClassName="active" style={{ "--i": "0.15s" }}>
+              Farmer Incoming Requests
             </NavLink>
           </li>
           <li>
-            <NavLink to="/responses" activeClassName="active" style={{ "--i": "0.25s" }}>
+            <NavLink to="/expertresponses" activeClassName="active" style={{ "--i": "0.25s" }}>
               My Responses
             </NavLink>
           </li>
           <li>
-            <NavLink to="/connectwithsectors" activeClassName="active" style={{ "--i": "0.2s" }}>
-              Connect with Sectors
+            <NavLink to="/createcontent" activeClassName="active" style={{ "--i": "0.2s" }}>
+              Create Content
             </NavLink>
           </li>
         </ul>

@@ -1,0 +1,25 @@
+.requests-overtime-container {
+    min-height: 100vh;
+    background: url(../../assets/images/admin-home.jpg) no-repeat center center / cover;
+    position: relative;
+  }
+  
+  .requests-overtime-overlay {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;  /* Distributes space between the graphs */
+    align-items: center;
+    gap: 20px;  /* Adds space between the graphs */
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .requests-chart {
+    width: 45%;  /* Ensures both graphs take up equal width */
+    min-width: 300px;  /* Ensures minimum width of each graph */
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  

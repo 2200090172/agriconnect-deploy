@@ -1,0 +1,48 @@
+.farmer-responses-container {
+    min-height: 100vh;
+    background: url(../../assets/images/farmer-background.jpg) no-repeat center center / cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.farmer-responses-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark shadow overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.responses-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+
+  .response-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 40px); /* Adjust this width for responsive design */
+    max-width: 400px; /* Set a max width for cards */
+    margin: 10px;
+  }
+  
+  .response-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .response-card p strong {
+    color: #000;
+  }
+  

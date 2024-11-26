@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Viewallexperts.css';
 import AdminLayout from './Adminlayout';
-
-const expertsData = [
-  { name: 'Amit Sharma', email: 'amit.sharma@example.com', phone: '9876543213', experience: '10 years', field: 'Crop Management' },
-  { name: 'Priya Singh', email: 'priya.singh@example.com', phone: '9876543214', experience: '5 years', field: 'Soil Health' },
-  { name: 'Rohit Verma', email: 'rohit.verma@example.com', phone: '9876543215', experience: '8 years', field: 'Pest Control' },
-];
+import axios from 'axios';
 
 const ViewallExperts = () => {
+  const [experts, setExperts] = useState([]);
+
+  const fetchExperts = async () => {
+    try {
+      const response = await axios.get('http://localhost:2005/viewallexperts');
+      setExperts(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchExperts();
+  }, []);
+
   return (
     <AdminLayout>
       <div className="viewallexperts-container">
@@ -26,7 +36,7 @@ const ViewallExperts = () => {
                 </tr>
               </thead>
               <tbody>
-                {expertsData.map((expert, index) => (
+                {experts.map((expert, index) => (
                   <tr key={index}>
                     <td>{expert.name}</td>
                     <td>{expert.email}</td>

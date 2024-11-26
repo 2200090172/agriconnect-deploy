@@ -1,0 +1,19 @@
+{
+    "farmerhome-welcomefarmer": "Welcome, Farmer!!",
+    "farmerHome-description": "Thank you for being an essential part of the AgriConnect community. Continue utilizing our platform, sharing your experiences, and making informed choices to enhance your farming practices.",
+    "farmerlayout-myhome": "My Home",
+    "farmerlayout-mysuggestionrequest": "My Suggestion Requests",
+    "farmerlayout-myresponses": "My Responses",
+    "farmerlayout-connectwithsectors": "Connect with Sectors",
+    
+        "sessionExpired": "Session expired. Please log in again.",
+        "sessionCheckError": "Error checking session. Please try again.",
+        "requestSuccess": "Request Submitted Successfully!",
+        "requestError": "Failed to submit request: {{error}}",
+    "farmerrequest-sendRequestTitle": "Send Crop Suggestion Request",
+    "farmerrequest-cropType": "Crop Type:",
+    "farmerrequest-requestDetails": "Request Details:",
+    "farmerrequest-location": "Location (District, State):",
+    "farmerrequest-submitRequest": "Submit Request"
+    
+}

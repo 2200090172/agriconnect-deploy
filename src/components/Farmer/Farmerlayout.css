@@ -28,7 +28,6 @@ body {
   z-index: 10;
   height: 5rem;
 }
-
 .menu {
   max-width: 72rem;
   width: 100%;
@@ -36,8 +35,8 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: center; /* Center-align items vertically */
+  gap: 1rem; /* Space between the globe and the logo */
   color: #fff;
 }
 
@@ -49,6 +48,7 @@ body {
   line-height: 4rem;
   margin-top: 20px;
 }
+
 
 .logo span {
   font-size: 1.8rem;
@@ -318,4 +318,21 @@ transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(230px)
 
 .container.active .main:hover {
 transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(340px) scale(0.5);
+}
+.language-translation-btn-container {
+  margin-left: auto;
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+.language-translation-globe-image {
+  width: 2rem; 
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.navbar .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

@@ -1,0 +1,49 @@
+.language-translation-btn-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .language-translation-globe-image {
+    width: 1.8rem; 
+    cursor: pointer;
+  }
+  
+
+.language-translation-dropdown {
+    position: absolute;
+    top: 2.5rem; 
+    left: 76%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    z-index: 1000;
+    padding: 5px 0;
+}
+
+.language-translation-dropdown button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    background-color: white;
+    border: none;
+    color: black; 
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.language-translation-dropdown button:hover {
+    background-color: #f0f0f0;
+}
+
+.language-translation-selected {
+    font-weight: bold;
+    color: blue;
+}
+
+.language-container {
+    position: relative;
+    display: inline-block; 
+    margin-top: 20px; 
+  }
+  
