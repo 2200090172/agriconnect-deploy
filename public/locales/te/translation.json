@@ -1,14 +1,24 @@
 {
     "farmerhome-welcomefarmer": "స్వాగతం, రైతు!!",
     "farmerHome-description": "AgriConnect సమాజంలో ఒక ముఖ్య భాగంగా ఉన్నందుకు కృతజ్ఞతలు. మా వేదికను ఉపయోగించడం కొనసాగించండి, మీ అనుభవాలను పంచుకోండి మరియు మీ వ్యవసాయ పద్ధతులను మెరుగుపరచడానికి సమాచారం ఆధారంగా నిర్ణయాలు తీసుకోండి.",
+    
+
     "farmerlayout-myhome": "నా ఇంటి పేజీ",
     "farmerlayout-mysuggestionrequest": "నా సూచన అభ్యర్థనలు",
     "farmerlayout-myresponses": "నా స్పందనలు",
     "farmerlayout-connectwithsectors": "విభాగాలతో కనెక్ట్ అవ్వండి",
+    "farmerlayout-farmerexplorecontent": "వ్యవసాయ కంటెంట్ అన్వేషించండి",
+
+    "farmer-logout": "లాగ్ అవుట్",
     "sessionExpired": "సెషన్ గడువు ముగిసింది. దయచేసి మళ్లీ లాగిన్ చేయండి.",
     "sessionCheckError": "సెషన్ తనిఖీలో లోపం. దయచేసి మళ్లీ ప్రయత్నించండి.",
     "requestSuccess": "వినతి విజయవంతంగా సమర్పించబడింది!",
     "requestError": "వినతిని సమర్పించడంలో విఫలం: {{error}}",
+    "farmer-logoutsuccess": "మీరు విజయవంతంగా లాగ్ అవుట్ అయ్యారు.",
+    "farmer-logoutfailure": "బ్యాక్ ఎండ్‌లో సెషన్ తొలగించడంలో విఫలమైంది. నిర్వాహకుడిని సంప్రదించండి!",
+    "logout-error": "లాగ్ అవుట్ సమయంలో లోపం వచ్చింది. దయచేసి మళ్లీ ప్రయత్నించండి.",
+    
+    
     "farmerrequest-sendRequestTitle": "పంట సిఫారసు అభ్యర్థన పంపండి",
     "farmerrequest-cropType": "పంట రకం:",
     "farmerrequest-requestDetails": "అభ్యర్థన వివరాలు:",

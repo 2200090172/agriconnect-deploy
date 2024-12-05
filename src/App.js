@@ -4,7 +4,6 @@ import './App.css';
 import Home from './components/Home.jsx';
 import Adminsignin from './components/signin/Adminsignin.jsx';
 import Farmersignin from './components/signin/Farmersignin.jsx';
-import Publicsignin from './components/signin/Publicsignin.jsx';
 import Expertsignin from './components/signin/Expertsignin.jsx';
 // import Adminhome from './components/admin/Adminhome.jsx';
 import Adminhome from './components/admin/NewAdminhome.jsx';
@@ -14,10 +13,8 @@ import AddSector from './components/admin/Addsector.jsx';
 import Viewallfarmers from './components/admin/Viewallfarmers.jsx';
 import ViewallExperts from './components/admin/Viewallexperts.jsx';
 import Viewallsectors from './components/admin/Viewallsectors.jsx';
-import About from './components/Public/About.jsx'; 
 // import FarmerLogin from './components/Farmer/Farmerlogin.jsx'; 
 import Aboutfarmer from './components/Farmer/Aboutfarmer.jsx'; 
-import PublicLogin from './components/Public/PublicLogin.jsx'; 
 import Farmerhome from './components/Farmer/Farmerhome.jsx';
 import Experthome from './components/Experts/Experthome.jsx';
 import Expertinrequest from './components/Experts/Expertinrequest.jsx';
@@ -36,6 +33,13 @@ import Testmulti from './components/Testmulti';
 import './i18n'; // Import i18n configuration
 import RequestsChart from './components/admin/Requestschart.jsx';
 import Expertresponses from './components/Experts/Expertresponses.jsx';
+import Expertcontent from './components/Experts/Expertcontent.jsx';
+import Farmerexplorecontent from './components/Farmer/Farmerexplorecontent.jsx';
+import FarmerContentDetail from './components/Farmer/FarmerContentDetail.jsx';
+import Signin from './components/signin/Signin.jsx';
+import Userhome from './components/user/Userhome.jsx';
+import Tempsignin from './components/signin/Tempsignin.jsx';
+import Expertgemini from './components/Experts/Expertgemini.jsx';
 
 
 function App() {
@@ -45,14 +49,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/signinlayout" element={<Signinlayout />}/> 
+        <Route path="/signin" element={<Signin />}/> 
 
 
         <Route path="/adminsignin" element={<Adminsignin />} />
         <Route path="/farmersignin" element={<Farmersignin />} />
         <Route path="/farmersignup" element={<Farmersignup />} />
-        <Route path="/publicsignin" element={<Publicsignin />} />
         <Route path="/expertsignin" element={<Expertsignin />} />
         <Route path="/expertsignup" element={<Expertsignup />} />
 
@@ -75,6 +78,9 @@ function App() {
        <Route path="/sendrequest" element={<FarmerRequest/>}/> 
        <Route path="/farmerresponses" element={<Farmerresponses/>}/> 
        <Route path="/farmerhome" element={<Farmerhome />}/> 
+       <Route path="/farmerexplorecontent" element={<Farmerexplorecontent />}/> 
+       <Route path="/content/:contentid" element={<FarmerContentDetail />} />
+
 
 
 
@@ -83,12 +89,17 @@ function App() {
        <Route path="/expertinrequests" element={<Expertinrequest />}/> 
        <Route path="/expertweather/:location" element={<Expertweather />} />
        <Route path="/expertresponses" element={<Expertresponses />}/> 
+       <Route path='/expertcontent' element={<Expertcontent />} />
+       <Route path='/expertgemini' element={<Expertgemini />} />
 
 
 
-        {/* <Route path='/multilingual' element={<Test />} /> */}
-       <Route path="/publicsignin" element={<PublicLogin/>}/> 
+       <Route path="/userhome" element={<Userhome />}/> 
+
        
+
+
+       <Route path="/tempsignin" element={<Tempsignin/>}/> 
 
        <Route path="/test" element={<Testmulti/>}/> 
 

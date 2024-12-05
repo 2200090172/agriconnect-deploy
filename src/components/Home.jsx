@@ -49,12 +49,17 @@ const Home = ({children}) => {
               Home
             </a>
           </li>
-          {/* <li>
+          <li>
+            <a href="/signin" style={{ "--i": "0.05s" }}>
+              Signin
+            </a>
+          </li>
+          <li>
             <a href="#" style={{ "--i": "0.1s" }}>
               About
             </a>
-          </li> */}
-          <li>
+          </li>
+          {/* <li>
             <Link to="/adminsignin" style={{ "--i": "0.15s" }}>
               Sign In as Admin
             </Link>
@@ -73,7 +78,7 @@ const Home = ({children}) => {
             <Link to="/expertsignin" style={{ "--i": "0.25s" }}>
               Sign In as Expert
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

@@ -46,6 +46,7 @@
     .response-detail {
       margin: 0 0 10px;
       font-size: 1.2em;
+      color: #000;
     }
     
     .response-date,
@@ -55,3 +56,5 @@
       color: #555;
     }
     
+
+

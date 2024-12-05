@@ -5,11 +5,20 @@
     "farmerlayout-mysuggestionrequest": "My Suggestion Requests",
     "farmerlayout-myresponses": "My Responses",
     "farmerlayout-connectwithsectors": "Connect with Sectors",
+    "farmerlayout-farmerexplorecontent":"Explore farming content",
     
+            
+        "farmer-logoutsuccess": "You have been logged out successfully.",
+        "farmer-logoutfailure": "Failed to log out. Please try again.",
+        "farmer-logout": "Logout",
+
         "sessionExpired": "Session expired. Please log in again.",
         "sessionCheckError": "Error checking session. Please try again.",
         "requestSuccess": "Request Submitted Successfully!",
         "requestError": "Failed to submit request: {{error}}",
+
+
+
     "farmerrequest-sendRequestTitle": "Send Crop Suggestion Request",
     "farmerrequest-cropType": "Crop Type:",
     "farmerrequest-requestDetails": "Request Details:",

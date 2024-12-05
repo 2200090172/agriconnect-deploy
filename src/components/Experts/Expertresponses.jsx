@@ -11,15 +11,11 @@ const Expertresponses = () => {
   const [expertProfile, setExpertProfile] = useState(null);
   const navigate = useNavigate();
 
-
-
-  
-
   const viewResponses = async (expertEmail) => {
     try {
-
       const response = await axios.get(`${config.url}/getexpertresponses/${expertEmail}`, { withCredentials: true });
       setExpertResponses(response.data);
+      console.log(response);
     } catch (error) {
       console.error("Error fetching responses:", error);
       alert("Failed to fetch responses");
@@ -41,10 +37,10 @@ const Expertresponses = () => {
 
   const getExpertProfile = async () => {
     try {
-      const response = await axios.get(`${config.url}/getexpertprofile`, { withCredentials: true });
-      setExpertProfile(response.data);
-      alert(response.data);
-      viewResponses(response.data.expertEmail)
+      const prresponse = await axios.get(`${config.url}/getexpertprofile`, { withCredentials: true });
+      setExpertProfile(prresponse.data);
+      // alert(prresponse.data.email);
+      viewResponses(prresponse.data.email);
     } catch (error) {
       console.error("Error fetching expert profile:", error);
       alert("Failed to fetch expert profile");
@@ -62,14 +58,27 @@ const Expertresponses = () => {
         <div className="expert-responses-overlay">
           {expertresponses.length > 0 ? (
             <ul className="response-list">
-              {expertresponses.map((response) => (
-                <li key={response.responseId} className="response-item">
-                  <h3 className="response-detail">{response.responseDetails}</h3>
-                  <p className="response-date">Date: {new Date(response.responseDate).toLocaleString()}</p>
-                  <p className="response-status">Status: {response.status}</p>
-                  <p className="farmer-phone">Farmer Contact: {response.farmerphone}</p>
-                </li>
-              ))}
+              {expertresponses.map((response) => {
+                const responseDateArray = response.responseDate;
+                const correctedDate = new Date(
+                  responseDateArray[0],           
+                  responseDateArray[1] - 1,       
+                  responseDateArray[2],           
+                  responseDateArray[3],          
+                  responseDateArray[4],         
+                  responseDateArray[5],        
+                  Math.floor(responseDateArray[6] / 1000000)  
+                );
+
+                return (
+                  <li key={response.responseId} className="response-item">
+                    <h3 className="response-detail">My Response: {response.responseDetails}</h3>
+                    <p className="response-date">Date: {correctedDate.toLocaleString()}</p>
+                    <p className="response-status">Status: {response.status}</p>
+                    <p className="farmer-phone">Farmer Contact: {response.farmerphone}</p>
+                  </li>
+                );
+              })}
             </ul>
           ) : (
             <p>No responses found.</p>

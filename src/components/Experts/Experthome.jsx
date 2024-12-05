@@ -9,12 +9,9 @@ const Experthome = () => {
   const [sessionActive, setSessionActive] = useState(true);
   const navigate = useNavigate();
 
-  // Function to check session on component mount
   const checkSession = async () => {
     try {
       const response = await axios.get(`${config.url}/checkexpertsession`, { withCredentials: true });
-      alert(response.data)
-      setSessionActive(response.data); // Assuming backend returns a boolean indicating session validity
       if (response.data==0) {
         alert("Session expired. Please log in again.");
         navigate('/expertsignin');
@@ -27,12 +24,12 @@ const Experthome = () => {
   };
 
   useEffect(() => {
-    checkSession() // Check session when component mounts
+    checkSession() 
   }
     ,[]);
 
   if (!sessionActive) {
-    alert("sessions is no active bro!!!") // Optionally, you can show a loading spinner or a message while checking the session
+    alert("sessions is no active bro!!!")
   }
 
   return (

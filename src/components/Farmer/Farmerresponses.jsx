@@ -20,7 +20,7 @@ const Farmerresponses = () => {
 
         if (sessionResponse.data === 0) {
           alert("Session expired. Please log in again.");
-          navigate('/farmersignin');
+          navigate('/signin');
           return;
         }
 

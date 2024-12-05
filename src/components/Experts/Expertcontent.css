@@ -1,0 +1,155 @@
+/* Existing CSS remains unchanged */
+.expert-content-header {
+    min-height: 100vh;
+    width: 100%;
+    background: url(../../assets/images/expert-background.jpg) no-repeat top center / cover;
+    position: relative;
+  }
+  
+  .expert-content-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.712);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+  }
+  
+  .expert-content-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase; 
+  }
+  
+  .expert-content-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .expert-content-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    background-color: #4caf50; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    user-select: none;
+  }
+  
+  .expert-content-btn:hover {
+    background-color: #388e3c;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .expert-content-title {
+      font-size: 2rem;
+    }
+  
+    .expert-content-description {
+      font-size: 1rem;
+    }
+  
+    .expert-content-btn {
+      font-size: 1rem;
+    }
+  
+    .expert-content-overlay {
+      padding: 20px;
+    }
+  }
+  
+  /* New CSS for the content creation section */
+  .content-creator {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    margin-top: 20px;
+  }
+  
+  .content-creator h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .content-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .content-fields input,
+  .content-fields textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .content-fields input[type="file"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .expert-content-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    user-select: none;
+  }
+  
+  .expert-content-btn:hover {
+    background-color: #388e3c;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .content-creator {
+      padding: 20px;
+    }
+  
+    .content-creator h2 {
+      font-size: 1.8rem;
+    }
+  
+    .content-fields input,
+    .content-fields textarea {
+      font-size: 0.9rem;
+    }
+  
+    .expert-content-btn {
+      font-size: 1rem;
+    }
+  }
+  

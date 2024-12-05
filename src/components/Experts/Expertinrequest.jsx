@@ -22,6 +22,7 @@ const Expertinrequest = () => {
       const pendingRequests = response.data.filter(request => request.status === "Pending");
       setRequests(pendingRequests);
       setFilteredRequests(pendingRequests);
+      console.log(pendingRequests);
     } catch (error) {
       console.log(error.message);
     }
@@ -167,7 +168,9 @@ const Expertinrequest = () => {
                 <p><strong>Email:</strong> {selectedRequest.email}</p>
                 <p><strong>Crop Type:</strong> {selectedRequest.croptype}</p>
                 <p><strong>Request Details:</strong> {selectedRequest.requestdetails}</p>
-                <p><strong>Request Date:</strong> {new Date(selectedRequest.requestdate).toLocaleDateString()}</p>
+                <p><strong>Request Date:</strong> {
+                                  new Date(...selectedRequest.requestdate).toLocaleDateString()
+                                }</p>
                 <p><strong>Location:</strong> {selectedRequest.location}</p>
                 <p><strong>Status:</strong> {selectedRequest.status}</p>
                 

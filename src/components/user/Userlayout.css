@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;500;600;700;800;900&display=swap');
 
 * {
@@ -12,7 +11,7 @@ body {
   overflow: hidden;
 }
 
-.expert-container {
+.container {
   max-height: 100vh;
   width: 100%;
   background-color: #131414;
@@ -21,7 +20,7 @@ body {
   overflow: hidden;
 }
 
-.expert-navbar {
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -29,20 +28,19 @@ body {
   z-index: 10;
   height: 5rem;
 }
-
-.expert-menu {
+.menu {
   max-width: 72rem;
   width: 100%;
   height: 100%;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: center; /* Center-align items vertically */
+  gap: 1rem; /* Space between the globe and the logo */
   color: #fff;
 }
 
-.expert-logo {
+.logo {
   font-size: 1.8rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -51,13 +49,14 @@ body {
   margin-top: 20px;
 }
 
-.expert-logo span {
+
+.logo span {
   font-size: 1.8rem;
   margin-left: 5px;
   color: #e20f2f;
 }
 
-.expert-hamburger-menu {
+.hamburger-menu {
   height: 4rem;
   width: 3rem;
   cursor: pointer;
@@ -66,7 +65,7 @@ body {
   justify-content: flex-end;
 }
 
-.expert-bar {
+.bar {
   width: 1.9rem;
   height: 1.5px;
   border-radius: 2px;
@@ -75,8 +74,8 @@ body {
   position: relative;
 }
 
-.expert-bar::before,
-.expert-bar::after {
+.bar::before,
+.bar::after {
   content: "";
   position: absolute;
   width: inherit;
@@ -85,19 +84,19 @@ body {
   transition: 0.5s;
 }
 
-.expert-bar::before {
+.bar::before {
   transform: translateY(-9px);
 }
 
-.expert-bar::after {
+.bar::after {
   transform: translateY(9px);
 }
 
-.expert-main-container {
+.main-container {
   overflow: hidden;
 }
 
-.expert-main {
+.main {
   position: relative;
   width: 100%;
   left: 0;
@@ -107,6 +106,15 @@ body {
   transform-style: preserve-3d;
   transition: 0.5s;
 }
+
+
+.user-header {
+    min-height: 100vh;
+    width: 100%;
+    background: url(../../assets/images/farmer-background.jpg) no-repeat top center / cover;
+    position: relative;
+  }
+  
 
 .overlay {
   position: absolute;
@@ -153,20 +161,20 @@ body {
   text-decoration: none;
 }
 
-.expert-container.expert-active .expert-bar {
+.container.active .bar {
   transform: rotate(360deg);
   background-color: transparent;
 }
 
-.expert-container.expert-active .expert-bar::before {
+.container.active .bar::before {
   transform: translateY(0) rotate(45deg);
 }
 
-.expert-container.expert-active .expert-bar::after {
+.container.active .bar::after {
   transform: translateY(0) rotate(-45deg);
 }
 
-.expert-container.expert-active .expert-main {
+.container.active .main {
   animation: main-animation 0.5s ease;
   cursor: pointer;
   transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(310px) scale(0.5);
@@ -181,7 +189,7 @@ body {
   }
 }
 
-.expert-links {
+.links {
   position: absolute;
   width: 30%;
   right: 0;
@@ -203,7 +211,7 @@ ul li.active a {
   color: #e20f2f;
 }
 
-.expert-links a {
+.links a {
   text-decoration: none;
   color: #eee;
   padding: 0.7rem 0;
@@ -218,11 +226,11 @@ ul li.active a {
   animation: hide 0.5s forwards ease;
 }
 
-.expert-links a:hover {
+.links a:hover {
   color: #e20f2f;
 }
 
-.expert-container.expert-active .expert-links a {
+.container.active .links a {
   animation: appear 0.5s forwards ease var(--i);
 }
 
@@ -248,7 +256,7 @@ ul li.active a {
   }
 }
 
-.expert-shadow {
+.shadow {
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -260,17 +268,17 @@ ul li.active a {
   background-color: #fff;
 }
 
-.expert-shadow.expert-one {
+.shadow.one {
   z-index: -1;
   opacity: 0.15;
 }
 
-.expert-shadow.expert-two {
+.shadow.two {
   z-index: -2;
   opacity: 0.1;
 }
 
-.expert-container.expert-active .expert-shadow.expert-one {
+.container.active .shadow.one {
   animation: shadow-one 0.6s ease-out;
   transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(215px) scale(0.5);
 }
@@ -280,76 +288,51 @@ ul li.active a {
     transform: translate(0);
   }
   5% {
-    transform: translate(0);
-  }
-  100% {
-    transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(215px) scale(0.5);
-  }
+    transform:perspective(1300px) rotateY(20deg) translateY(10px) translateZ(310px) scale(0.5);
+}
+100% {
+  transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(215px) scale(0.5);
+}
 }
 
-.expert-container.expert-active .expert-shadow.expert-two {
-  animation: shadow-two 0.5s ease-out;
-  transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(110px) scale(0.5);
+.container.active .shadow.two {
+animation: shadow-two 0.6s ease-out;
+transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(120px) scale(0.5);
 }
 
 @keyframes shadow-two {
-  0% {
-    transform: translate(0);
-  }
-  5% {
-    transform: translate(0);
-  }
-  100% {
-    transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(110px) scale(0.5);
-  }
+0% {
+  transform: translate(0);
+}
+20% {
+  transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(310px) scale(0.5);
+}
+100% {
+  transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(120px) scale(0.5);
+}
 }
 
-@media screen and (max-width: 900px) {
-  .expert-links {
-    width: 60%;
-    margin-left: 2rem;
-  }
-
-  .expert-links a {
-    font-size: 1.5rem;
-  }
-
-  .expert-container {
-    background-image: linear-gradient(135deg, #131414 0%, #000000 100%);
-  }
+.container.active .main:hover + .shadow.one {
+transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(230px) scale(0.5);
 }
 
+.container.active .main:hover {
+transform: perspective(1300px) rotateY(20deg) translateY(10px) translateZ(340px) scale(0.5);
+}
+.language-translation-btn-container {
+  margin-left: auto;
+  margin-right: 1rem;
+  display: inline-block;
+}
 
+.language-translation-globe-image {
+  width: 2rem; 
+  cursor: pointer;
+  vertical-align: middle;
+}
 
-    /* Logout Button Styling */
-    .expert-logout-button {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      padding: 8px 15px;
-      font-size: 1rem;
-      color: #fff;
-      background-color: #f50808; /* Button background color */
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-transform: uppercase;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    }
-    
-    .expert-logout-button:hover {
-      background-color: #e80303; /* Darker green on hover */
-      transform: scale(1.05); /* Slightly enlarge on hover */
-    }
-    
-    /* Ensure proper positioning for smaller screens */
-    @media screen and (max-width: 768px) {
-      .expert-logout-button {
-        top: 10px;
-        right: 10px;
-        padding: 6px 10px;
-        font-size: 0.9rem;
-      }
-    }
-    
+.navbar .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

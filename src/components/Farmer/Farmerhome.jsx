@@ -19,7 +19,7 @@ const Farmerhome = () => {
                 setSessionStatus(response.data);
                 if (response.data === 0) {
                     alert(t("sessionExpired"));
-                    navigate('/farmerlogin'); // Redirect to login if session is inactive
+                    navigate('/signin');
                 }
             } catch (error) {
                 console.error("Error checking session status:", error);

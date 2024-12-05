@@ -40,6 +40,16 @@ const Signinlayout = ({children}) => {
             </a>
           </li>
           <li>
+            <a href="/signin" style={{ "--i": "0.05s" }}>
+              Signin
+            </a>
+          </li>
+          <li>
+            <a href="/signin" style={{ "--i": "0.05s" }}>
+              About
+            </a>
+          </li>
+          {/* <li>
             <Link to="/adminsignin" style={{ "--i": "0.15s" }}>
               Sign In as Admin
             </Link>
@@ -58,7 +68,8 @@ const Signinlayout = ({children}) => {
             <Link to="/expertsignin" style={{ "--i": "0.3s" }}>
               Sign In as Expert
             </Link>
-          </li>
+          </li> */}
+
         </ul>
       </div>
     </div>

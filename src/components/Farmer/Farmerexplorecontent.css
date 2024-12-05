@@ -1,0 +1,142 @@
+/* Header styling */
+.farmer-content-header {
+    min-height: 100vh;
+    background: url(../../assets/images/farmer-background.jpg) no-repeat center center / cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay styling */
+.farmer-content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark shadow overlay */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cards container: side-by-side cards */
+.farmer-content-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line if needed */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center the cards horizontally */
+    padding: 20px;
+    width: 100%; /* Use full width of the container */
+    box-sizing: border-box;
+}
+
+/* Individual card styling */
+.farmer-content-card {
+    flex: 1; /* Each card takes equal space */
+    max-width: calc(25% - 20px); /* Four cards per row, accounting for gaps */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for subtle effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Stack card content vertically */
+    background-color: transparent; /* Remove extra background */
+    position: relative;
+}
+
+/* Hover effect */
+.farmer-content-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Hover shadow for effect */
+}
+
+/* Image styling */
+.farmer-content-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the card area without distortion */
+    border-radius: 10px 10px 0 0; /* Rounded corners for the top */
+    display: block;
+}
+
+/* Card content container */
+.farmer-content-card-content {
+    padding: 15px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Light overlay for content readability */
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 10px 10px;
+    color: white; /* Set text color to white */
+}
+
+/* Title within the card */
+.farmer-content-card h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: white; /* Set title text color to white */
+}
+
+/* Show full button */
+.farmer-content-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.farmer-content-button:hover {
+    background-color: #218838;
+}
+
+/* Pagination styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 8%; 
+}
+
+.pagination-button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination-button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination-button:hover {
+    background-color: #ddd;
+}
+
+.pagination-button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+/* Loading and error states */
+.farmer-content-loading, .farmer-content-error {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 50px;
+    color: white; /* Ensure loading and error text is white */
+}
+
+.farmer-content-error {
+    color: red; /* Keep error text red */
+}

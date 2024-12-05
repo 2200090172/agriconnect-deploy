@@ -27,12 +27,12 @@ const FarmerRequest = () => {
         });
         if (response.data === 0) {
           alert(t("sessionExpired"));
-          navigate('/farmersignin');
+          navigate('/signin');
         }
       } catch (error) {
         console.error("Error checking session:", error);
         alert(t('sessionCheckError'));
-        navigate('/farmerlogin');
+        navigate('/signin');
       }
     };
     checkSession();

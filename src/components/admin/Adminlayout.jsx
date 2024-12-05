@@ -1,18 +1,76 @@
-import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Adminlayout.css";
-// import backgroundImage from '../../assets/images/admin-home.jpg'; // Import the image if required
+import axios from "axios";
+import config from "../../config"; // Adjust the path if needed
 
 const AdminLayout = ({ children }) => {
   const [isActive, setIsActive] = useState(false);
+  const [sessionActive, setSessionActive] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsActive(!isActive);
   };
 
+  const handleLogout = async () => {
+    try {
+      const response = await axios.get(
+        `${config.url}/adminlogout`, // Replace with your logout API endpoint
+        { withCredentials: true }
+      );
+      if (response.data === 1) {
+        alert("You have been logged out.");
+        navigate("/adminsignin");
+      } else {
+        alert("Failed to remove session in backend, Contact Administrator!");
+      }
+    } catch (error) {
+      console.error("Error during logout:", error);
+      alert("Failed to log out. Please try again.");
+    }
+  };
+
+  const checkSession = async () => {
+    try {
+      const response = await axios.get(`${config.url}/checkadminsession`, {
+        withCredentials: true,
+      });
+      setSessionActive(response.data);
+      if (!response.data) {
+        alert("Session expired. Please log in again.");
+        navigate("/adminsignin");
+      }
+    } catch (error) {
+      console.error("Error checking session:", error);
+      alert("Error verifying session. Redirecting to login.");
+      navigate("/adminsignin");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    checkSession();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="admin-gemini-loading-container">
+        <p className="admin-gemini-loading-message">
+          Verifying your session. Please wait...
+        </p>
+      </div>
+    );
+  }
+
+  if (!sessionActive) {
+    return null;
+  }
+
   return (
-    <div className={`container ${isActive ? "active" : ""}`}
-    >
+    <div className={`container ${isActive ? "active" : ""}`}>
       <div className="navbar">
         <div className="menu">
           <h3 className="logo">
@@ -22,11 +80,12 @@ const AdminLayout = ({ children }) => {
             <div className="bar"></div>
           </div>
         </div>
+        <span className="logout-button" onClick={handleLogout}>
+          Logout
+        </span>
       </div>
       <div className="main-container">
-        <div className="main">
-          {children} {/* This will render the child component */}
-        </div>
+        <div className="main">{children}</div>
         <div className="shadow one"></div>
         <div className="shadow two"></div>
       </div>
@@ -70,6 +129,11 @@ const AdminLayout = ({ children }) => {
           <li>
             <Link to="/viewallsectors" style={{ "--i": "0.25s" }}>
               View All Sectors
+            </Link>
+          </li>
+          <li>
+            <Link to="/admindashboard" style={{ "--i": "0.25s" }}>
+              Admin Dashboard
             </Link>
           </li>
         </ul>

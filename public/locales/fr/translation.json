@@ -1,14 +1,24 @@
 {
     "farmerhome-welcomefarmer": "Bienvenue, Agriculteur !!",
     "farmerHome-description": "Merci d'être un élément essentiel de la communauté AgriConnect. Continuez à utiliser notre plateforme, à partager vos expériences et à faire des choix éclairés pour améliorer vos pratiques agricoles.",
+    
+    
     "farmerlayout-myhome": "Ma Maison",
     "farmerlayout-mysuggestionrequest": "Mes Demandes de Suggestions",
     "farmerlayout-myresponses": "Mes Réponses",
     "farmerlayout-connectwithsectors": "Se Connecter avec les Secteurs",
+    "farmerlayout-farmerexplorecontent": "Explorer le contenu agricole",
+
+    "farmer-logout": "Se déconnecter",
     "sessionExpired": "Session expirée. Veuillez vous reconnecter.",
     "sessionCheckError": "Erreur lors de la vérification de la session. Veuillez réessayer.",
     "requestSuccess": "Demande soumise avec succès !",
     "requestError": "Échec de la soumission de la demande : {{error}}",
+    "farmer-logoutsuccess": "Vous avez été déconnecté avec succès.",
+    "farmer-logoutfailure": "Échec de la suppression de la session sur le serveur. Contactez l'administrateur !",
+    "logout-error": "Une erreur s'est produite lors de la déconnexion. Veuillez réessayer.",
+    
+    
     "farmerrequest-sendRequestTitle": "Envoyer une demande de suggestion de culture",
     "farmerrequest-cropType": "Type de culture :",
     "farmerrequest-requestDetails": "Détails de la demande :",

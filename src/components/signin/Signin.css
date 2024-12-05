@@ -1,0 +1,131 @@
+
+form {
+  color: white; /* Makes all text white */
+}
+
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='white' d='M2 0L0 2h4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 10px;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* White with transparency */
+}
+
+select option {
+  color: black; /* Ensure dropdown options remain visible when selected */
+  background-color: white; /* Light background for dropdown menu */
+}
+
+/* Button text */
+button {
+  color: white;
+}
+
+/* Link text (e.g., signup link) */
+a {
+  color: white;
+}
+
+
+.normal-signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: none; /* Remove dark black box */
+  }
+  
+  /* Form styling */
+  .signin-form {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Adds blur effect */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    text-decoration-color: #e41212;
+    color: #fff; /* White text for readability */
+  }
+  
+  /* Dropdown styling */
+  .signin-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1); /* Transparent input */
+    color: #fff; /* Dropdown text color */
+    appearance: none; /* Custom styling for dropdown */
+  }
+  
+  .signin-input option {
+    background: #333; /* Dropdown background color */
+    color: #fff; /* Dropdown option text color */
+  }
+  
+  .signin-input::placeholder {
+    color: rgba(255, 255, 255, 0.7); 
+  }
+  
+  .signin-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  .signin-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .signin-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Sign-up message styling */
+  .signup-message {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #fff;
+  }
+  
+  .signup-link {
+    color: #ffc107;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .signup-link:hover {
+    text-decoration: underline;
+  }
+  
+
+  .forgot-password {
+    margin-top: 10px;
+  }
+  
+  .forgot-password-link {
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .forgot-password-link:hover {
+    color: #0056b3;
+  }
+  
