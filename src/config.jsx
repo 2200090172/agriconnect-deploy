@@ -1,4 +1,4 @@
 const config={
-"url":"agriconnect-backend-deploy-production.up.railway.app"
+"url":"agriconnect-backend-deploy-production.up.railway.app/"
 };
 export default config
