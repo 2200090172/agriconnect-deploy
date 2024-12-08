@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Adminlayout from './Adminlayout';
 import './Addfarmer.css';
 import axios from 'axios';
+import config from '../../config';
 
 
 const Addfarmer = () => {
@@ -30,7 +31,7 @@ const Addfarmer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
    try{
-    const response= await axios.post("http://localhost:2005/addfarmer",farmer);
+    const response= await axios.post(`${config.url}/addfarmer`,farmer);
     if(message.status==200)
     {
       alert("Farmer Added Successfully!");

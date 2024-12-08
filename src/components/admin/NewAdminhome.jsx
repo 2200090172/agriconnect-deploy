@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Adminlayout from './Adminlayout';
 import './Addfarmer.css';
 import axios from 'axios';
+import config from '../../config';
 
 const Addfarmer = () => {
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ const Addfarmer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:2005/addfarmer", farmer);
+      const response = await axios.post(`${config.url}/addfarmer`, farmer);
       if (response.status === 200) {
         alert("Farmer Added Successfully!");
         setFarmer(initialFormState); // Reset form fields after successful submission

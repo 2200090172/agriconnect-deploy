@@ -37,7 +37,6 @@ const Expertcontent = () => {
     }
   };
 
-  // Get expert profile details
   const getExpertProfile = async () => {
     try {
       const response = await axios.get(`${config.url}/getexpertprofile`, { withCredentials: true });

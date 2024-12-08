@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Farmersignin.css'
 import axios from 'axios';
 import Signinlayout from './Signinlayout';
+import config from '../../config';
 
 const Farmersignin = () => {
     const navigate = useNavigate();
@@ -28,7 +29,7 @@ const Farmersignin = () => {
         try {
             console.log("Attempting login with contact:", contact, "and password:", password); // Debugging line
     
-            const response = await axios.get(`http://localhost:2005/farmerlogin`, {
+            const response = await axios.get(`${config.url}/farmerlogin`, {
                 params: {
                     fcontact: contact, 
                     fpwd: password     

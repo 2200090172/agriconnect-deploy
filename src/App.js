@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home.jsx';
 import Adminsignin from './components/signin/Adminsignin.jsx';
@@ -9,7 +9,6 @@ import Expertsignin from './components/signin/Expertsignin.jsx';
 import Adminhome from './components/admin/NewAdminhome.jsx';
 import Addfarmer from './components/admin/Addfarmer.jsx';
 import Addexpert from './components/admin/Addexpert.jsx';
-import AddSector from './components/admin/Addsector.jsx';
 import Viewallfarmers from './components/admin/Viewallfarmers.jsx';
 import ViewallExperts from './components/admin/Viewallexperts.jsx';
 import Viewallsectors from './components/admin/Viewallsectors.jsx';
@@ -40,6 +39,16 @@ import Signin from './components/signin/Signin.jsx';
 import Userhome from './components/user/Userhome.jsx';
 import Tempsignin from './components/signin/Tempsignin.jsx';
 import Expertgemini from './components/Experts/Expertgemini.jsx';
+import Financierhome from './components/Financier/Financierhome.jsx';
+import AddFinancier from './components/admin/Addfinancier.jsx';
+import Addloan from './components/Financier/Addloan.jsx';
+import Viewallloans from './components/Financier/Viewallloans.jsx';
+import Farmerviewallloans from './components/Farmer/Farmerviewallloans.jsx';
+import ApplyLoan from './components/Farmer/Applyloan.jsx';
+import Forgotpassword from './components/signin/Forgotpassword.jsx';
+import Resetpassword from './components/signin/Resetpassword.jsx';
+import { Viewallloanrequests } from './components/Financier/Viewallloanrequests.jsx';
+import InteractiveMap from './components/Experts/Interactivemap.jsx';
 
 
 function App() {
@@ -51,6 +60,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signinlayout" element={<Signinlayout />}/> 
         <Route path="/signin" element={<Signin />}/> 
+        <Route path="/forgotpassword" element={<Forgotpassword />}/> 
+        <Route path="/resetpassword" element={<Resetpassword />}/> 
 
 
         <Route path="/adminsignin" element={<Adminsignin />} />
@@ -63,10 +74,10 @@ function App() {
         <Route path="/adminhome" element={<Adminhome />} />
         <Route path='/addfarmer' element={<Addfarmer />} />
         <Route path='/addexpert' element={<Addexpert />} />
-        <Route path='/addsector' element={<AddSector />} />
+        <Route path='/addfinancier' element={<AddFinancier />} />
         <Route path='/viewallfarmers' element={<Viewallfarmers />} />
         <Route path='/viewallexperts' element={<ViewallExperts />} />
-        <Route path='/viewallsectors' element={<Viewallsectors />} />
+        <Route path='/viewallfinanciers' element={<Viewallsectors />} />
         <Route path='/approveexpert' element={<Approveexpert />} />
         <Route path='/admindashboard' element={<RequestsChart />} />
 
@@ -80,6 +91,9 @@ function App() {
        <Route path="/farmerhome" element={<Farmerhome />}/> 
        <Route path="/farmerexplorecontent" element={<Farmerexplorecontent />}/> 
        <Route path="/content/:contentid" element={<FarmerContentDetail />} />
+       <Route path="/farmer-viewallloans" element={<Farmerviewallloans />}/> 
+       <Route path="/applyloan/:loanid" element={<ApplyLoan />} />
+
 
 
 
@@ -91,6 +105,18 @@ function App() {
        <Route path="/expertresponses" element={<Expertresponses />}/> 
        <Route path='/expertcontent' element={<Expertcontent />} />
        <Route path='/expertgemini' element={<Expertgemini />} />
+       <Route path='/interactivemap' element={<InteractiveMap />} />
+
+
+
+
+
+       <Route path='/financierhome' element={<Financierhome />} />
+       <Route path='/addloan' element={<Addloan />} />
+       <Route path='/viewallloans' element={<Viewallloans />} />
+       <Route path='/viewallloanrequests' element={<Viewallloanrequests />} />
+
+
 
 
 

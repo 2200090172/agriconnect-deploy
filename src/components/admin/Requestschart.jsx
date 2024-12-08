@@ -3,6 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, BarChart, Bar, L
 import AdminLayout from "./Adminlayout";
 import "./Requestschart.css";
 import axios from "axios";
+import config from "../../config";
 
 function RequestsChart() {
   const [lineChartData, setLineChartData] = useState([]);
@@ -11,7 +12,7 @@ function RequestsChart() {
   useEffect(() => {
     const fetchLineChartData = async () => {
       try {
-        const response = await axios.get("http://localhost:2005/requests-overtime");
+        const response = await axios.get(`${config.url}/requests-overtime`);
         setLineChartData(response.data);
       } catch (error) {
         console.error("Error fetching line chart data:", error);
@@ -24,7 +25,7 @@ function RequestsChart() {
   useEffect(() => {
     const fetchBarChartData = async () => {
       try {
-        const response = await axios.get("http://localhost:2005/expert-solved-requests");
+        const response = await axios.get(`${config.url}/expert-solved-requests`);
         setBarChartData(response.data);
       } catch (error) {
         console.error("Error fetching bar chart data:", error);

@@ -21,7 +21,7 @@ const Farmerexplorecontent = () => {
     useEffect(() => {
         const checkSession = async () => {
             try {
-                const response = await axios.get('http://localhost:2005/checkfarmersession', {
+                const response = await axios.get(`${config.url}/checkfarmersession`, {
                     withCredentials: true,
                 });
                 setSessionStatus(response.data);

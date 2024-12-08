@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Farmerlayout from './Farmerlayout';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
+import config from '../../config';
 
 const Farmerhome = () => {
     const [sessionStatus, setSessionStatus] = useState(null); // null initially, 1 for active, 0 for inactive
@@ -13,7 +14,7 @@ const Farmerhome = () => {
     useEffect(() => {
         const checkSession = async () => {
             try {
-                const response = await axios.get('http://localhost:2005/checkfarmersession', {
+                const response = await axios.get(`${config.url}/checkfarmersession`, {
                     withCredentials: true,
                 });
                 setSessionStatus(response.data);

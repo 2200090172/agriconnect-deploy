@@ -8,6 +8,8 @@
     "farmerlayout-myresponses": "నా స్పందనలు",
     "farmerlayout-connectwithsectors": "విభాగాలతో కనెక్ట్ అవ్వండి",
     "farmerlayout-farmerexplorecontent": "వ్యవసాయ కంటెంట్ అన్వేషించండి",
+    "farmerlayout-viewallloans": "అన్ని రుణాలను చూడండి",
+    
 
     "farmer-logout": "లాగ్ అవుట్",
     "sessionExpired": "సెషన్ గడువు ముగిసింది. దయచేసి మళ్లీ లాగిన్ చేయండి.",
@@ -23,5 +25,43 @@
     "farmerrequest-cropType": "పంట రకం:",
     "farmerrequest-requestDetails": "అభ్యర్థన వివరాలు:",
     "farmerrequest-location": "స్థానం (జిల్లా, రాష్ట్రం):",
-    "farmerrequest-submitRequest": "అభ్యర్థనను సమర్పించండి"
+    "farmerrequest-submitRequest": "అభ్యర్థనను సమర్పించండి",
+
+
+
+    
+        "loading": "లోడ్ అవుతోంది...",
+
+        "viewAllLoansTitle": "అన్ని రుణాలను చూడండి",
+        "viewAllLoansDescription": "ఇక్కడ మీరు అందుబాటులో ఉన్న అన్ని రుణాలను మరియు వాటి వివరాలను చూడవచ్చు.",
+        "searchByLoanType": "రుణ రకం ద్వారా శోధించండి...",
+        "sortByLoanType": "రుణ రకం ప్రకారం క్రమబద్ధీకరించు",
+        "sortByMaxAmount": "గరిష్ట మొత్తం ప్రకారం క్రమబద్ధీకరించు",
+        "sortByInterestRate": "వడ్డీ రేటు ప్రకారం క్రమబద్ధీకరించు",
+        "loanID": "రుణ ఐడీ",
+        "interestRate": "వడ్డీ రేటు",
+        "maxAmount": "గరిష్ట మొత్తం",
+        "repaymentPeriod": "తిరిగి చెల్లించే వ్యవధి",
+        "months": "నెలలు",
+
+        "youAreApplyingForLoan": "మీరు ఈ రకమైన రుణానికి దరఖాస్తు చేస్తున్నారు",
+    "withInterestRate": "ఇది వడ్డీ రేటుతో",
+    "maximumAmount": "గరిష్ట మొత్తం",
+    
+    "applyLoan": "రుణానికి దరఖాస్తు చేయండి",
+
+
+
+
+    "applicantName": "దరఖాస్తుదారు పేరు",
+    "email": "ఈమెయిల్",
+    "contactNumber": "సంప్రదింపు సంఖ్య",
+    "uploadDocuments": "పత్రాలు అప్‌లోడ్ చేయండి",
+    "uploadedImage": "అప్‌లోడ్ చేయబడిన చిత్రం",
+    "submitApplication": "అప్లికేషన్ సబ్మిట్ చేయండి",
+    "formSubmissionSuccess": "ఫారమ్ విజయవంతంగా సమర్పించబడింది!",
+    "formSubmissionError": "ఫారమ్ సమర్పణలో పొరపాటు. దయచేసి మళ్ళీ ప్రయత్నించండి.",
+    "profileFetchError": "ప్రొఫైల్ డేటాను పొందడంలో పొరపాటు."
+    
+    
 }

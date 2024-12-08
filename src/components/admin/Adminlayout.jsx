@@ -22,7 +22,7 @@ const AdminLayout = ({ children }) => {
       );
       if (response.data === 1) {
         alert("You have been logged out.");
-        navigate("/adminsignin");
+        navigate("/signin");
       } else {
         alert("Failed to remove session in backend, Contact Administrator!");
       }
@@ -40,12 +40,12 @@ const AdminLayout = ({ children }) => {
       setSessionActive(response.data);
       if (!response.data) {
         alert("Session expired. Please log in again.");
-        navigate("/adminsignin");
+        navigate("/signin");
       }
     } catch (error) {
       console.error("Error checking session:", error);
       alert("Error verifying session. Redirecting to login.");
-      navigate("/adminsignin");
+      navigate("/signin");
     } finally {
       setIsLoading(false);
     }
@@ -122,13 +122,13 @@ const AdminLayout = ({ children }) => {
             </Link>
           </li>
           <li>
-            <Link to="/addsector" style={{ "--i": "0.25s" }}>
-              Add Sector
+            <Link to="/addfinancier" style={{ "--i": "0.25s" }}>
+              Add Financier
             </Link>
           </li>
           <li>
-            <Link to="/viewallsectors" style={{ "--i": "0.25s" }}>
-              View All Sectors
+            <Link to="/viewallfinanciers" style={{ "--i": "0.25s" }}>
+              View All Financiers
             </Link>
           </li>
           <li>

@@ -8,6 +8,9 @@
     "farmerlayout-myresponses": "Mes Réponses",
     "farmerlayout-connectwithsectors": "Se Connecter avec les Secteurs",
     "farmerlayout-farmerexplorecontent": "Explorer le contenu agricole",
+    "farmerlayout-viewallloans": "Voir tous les prêts",
+    
+
 
     "farmer-logout": "Se déconnecter",
     "sessionExpired": "Session expirée. Veuillez vous reconnecter.",
@@ -23,5 +26,44 @@
     "farmerrequest-cropType": "Type de culture :",
     "farmerrequest-requestDetails": "Détails de la demande :",
     "farmerrequest-location": "Emplacement (District, État) :",
-    "farmerrequest-submitRequest": "Soumettre la demande"
+    "farmerrequest-submitRequest": "Soumettre la demande",
+
+
+
+
+    
+        "loading": "Chargement...",
+        "viewAllLoansTitle": "Voir tous les prêts",
+        "viewAllLoansDescription": "Ici, vous pouvez explorer tous les prêts disponibles et leurs détails.",
+        "searchByLoanType": "Rechercher par type de prêt...",
+        "sortByLoanType": "Trier par type de prêt",
+        "sortByMaxAmount": "Trier par montant maximum",
+        "sortByInterestRate": "Trier par taux d'intérêt",
+        "loanID": "ID de prêt",
+        "interestRate": "Taux d'intérêt",
+        "maxAmount": "Montant maximum",
+        "repaymentPeriod": "Période de remboursement",
+        "months": "mois",
+
+
+        "youAreApplyingForLoan": "Vous demandez un prêt de type",
+    "withInterestRate": "avec un taux d'intérêt de",
+    "maximumAmount": "Le montant maximum est",
+   
+    "applyLoan": "Demander un prêt",
+
+
+
+
+    "applicantName": "Nom du Candidat",
+    "email": "Email",
+    "contactNumber": "Numéro de Contact",
+    "uploadDocuments": "Télécharger les Documents",
+    "uploadedImage": "Image Téléchargée",
+    "submitApplication": "Soumettre la Demande",
+    "formSubmissionSuccess": "Formulaire soumis avec succès !",
+    "formSubmissionError": "Erreur lors de la soumission du formulaire. Veuillez réessayer.",
+    "profileFetchError": "Erreur lors de la récupération des données du profil."
+    
+    
 }

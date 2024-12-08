@@ -17,9 +17,80 @@ const Expertsignup = () => {
     certifications: '',
   });
 
-  const [otpSent, setOtpSent] = useState(false); // Track if OTP was sent
-  const [otp, setOtp] = useState(''); // OTP input
-  const [otpVerified, setOtpVerified] = useState(false); // Track if OTP was verified
+  const [errors, setErrors] = useState({});
+  const [otpSent, setOtpSent] = useState(false);
+  const [otp, setOtp] = useState('');
+  const [otpVerified, setOtpVerified] = useState(false);
+
+  const validate = () => {
+    const newErrors = {};
+
+    // Full Name validation
+    if (!/^[A-Za-z\s]+$/.test(expert.fullname)) {
+      newErrors.fullname = 'Name should only contain alphabets.';
+    }
+
+// Email validation
+const allowedDomains = [
+  'gmail.com',
+  'kluniversity.in',
+  'yahoo.com',
+  'outlook.com',
+  'hotmail.com',
+  'protonmail.com',
+  'icloud.com',
+  'aol.com'
+];
+
+const emailPattern = /^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)?[a-zA-Z]+$/; // Basic email format
+const domainPattern = new RegExp(`@(${allowedDomains.join('|')})$`); // Restrict to allowed domains
+
+if (!emailPattern.test(expert.email)) {
+  newErrors.email = 'Invalid email format.';
+} else if (!domainPattern.test(expert.email)) {
+  newErrors.email = `Email must belong to one of these domains: ${allowedDomains.join(', ')}.`;
+}
+
+
+    if (!emailPattern.test(expert.email)) {
+      newErrors.email = 'Invalid email format.';
+    } else if (!domainPattern.test(expert.email)) {
+      newErrors.email = `Email must belong to one of these domains: ${allowedDomains.join(', ')}.`;
+    }
+    // Password validation
+    if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/.test(expert.password)) {
+      newErrors.password =
+        'Password must contain at least 8 characters, including uppercase, lowercase, a number, and a special character.';
+    }
+
+    // Phone number validation
+    if (!/^[6-9]\d{9}$/.test(expert.phone)) {
+      newErrors.phone = 'Phone number should start with 6-9 and be 10 digits long.';
+    }
+
+    // Experience validation
+    if (!/^\d+$/.test(expert.experience) || parseInt(expert.experience, 10) <= 0) {
+      newErrors.experience = 'Experience must be a positive number.';
+    }
+
+    // Field of expertise validation
+    if (!expert.fieldofexpertise.trim()) {
+      newErrors.fieldofexpertise = 'Field of expertise is required.';
+    }
+
+    // Qualification validation
+    if (!expert.qualification.trim()) {
+      newErrors.qualification = 'Qualification is required.';
+    }
+
+    // Languages Spoken validation
+    if (!expert.languagesspoken.trim()) {
+      newErrors.languagesspoken = 'Languages spoken is required.';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,13 +102,10 @@ const Expertsignup = () => {
 
   const handleSendOtp = async () => {
     try {
-      const response = await axios.post(`${config.url}/sendotp/${expert.fullname}/${expert.email}`, 
-      {
-        withCredentials: true
-      });
-
-      console.log(`${config.url}/sendotp/${expert.fullname}/${expert.email}`);
-      console.log(response.data)
+      const response = await axios.post(
+        `${config.url}/sendotp/${expert.fullname}/${expert.email}`,
+        { withCredentials: true }
+      );
       if (response.data === 1) {
         alert('OTP sent to your email.');
         setOtpSent(true);
@@ -52,11 +120,10 @@ const Expertsignup = () => {
 
   const handleVerifyOtp = async () => {
     try {
-      const response = await axios.post(`${config.url}/verifyotp/${otp}`, {withCredentials:true});
-      console.log(response.data);
+      const response = await axios.post(`${config.url}/verifyotp/${otp}`, { withCredentials: true });
       if (response.data === 1) {
         alert('OTP verified successfully.');
-        setOtpVerified(true); // OTP verified, disable button
+        setOtpVerified(true);
       } else {
         alert('Invalid OTP. Please try again.');
       }
@@ -68,15 +135,17 @@ const Expertsignup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validate()) return;
+
     if (!otpVerified) {
       alert('Please verify the OTP before signing up.');
       return;
     }
+
     try {
       const response = await axios.post(`${config.url}/expertsignuprequest`, expert);
       if (response.data === 1) {
         alert('Expert added successfully');
-        // Reset the form fields
         setExpert({
           fullname: '',
           email: '',
@@ -109,22 +178,20 @@ const Expertsignup = () => {
             <div>
               <label>Full Name:</label>
               <input type="text" name="fullname" value={expert.fullname} onChange={handleChange} required />
+              {errors.fullname && <p className="error">{errors.fullname}</p>}
             </div>
             <div>
               <label>Email:</label>
               <input type="email" name="email" value={expert.email} onChange={handleChange} required />
-              <span className="otp-button" onClick={handleSendOtp}>Send OTP</span>
+              {errors.email && <p className="error">{errors.email}</p>}
+              <span className="otp-button" onClick={handleSendOtp}>
+                Send OTP
+              </span>
             </div>
             {otpSent && (
               <div>
                 <label>Enter OTP:</label>
-                <input
-                  type="text"
-                  name="otp"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
-                  required
-                />
+                <input type="text" name="otp" value={otp} onChange={(e) => setOtp(e.target.value)} required />
                 <span
                   className={`otp-button ${otpVerified ? 'verified' : ''}`}
                   onClick={otpVerified ? null : handleVerifyOtp}
@@ -137,26 +204,44 @@ const Expertsignup = () => {
             <div>
               <label>Password:</label>
               <input type="password" name="password" value={expert.password} onChange={handleChange} required />
+              {errors.password && <p className="error">{errors.password}</p>}
             </div>
             <div>
               <label>Phone:</label>
               <input type="tel" name="phone" value={expert.phone} onChange={handleChange} required />
+              {errors.phone && <p className="error">{errors.phone}</p>}
             </div>
             <div>
-              <label>Experience (in years):</label>
+              <label>Experience</label>
               <input type="text" name="experience" value={expert.experience} onChange={handleChange} required />
+              {errors.experience && <p className="error">{errors.experience}</p>}
             </div>
             <div>
               <label>Field of Expertise:</label>
-              <input type="text" name="fieldofexpertise" value={expert.fieldofexpertise} onChange={handleChange} required />
+              <input
+                type="text"
+                name="fieldofexpertise"
+                value={expert.fieldofexpertise}
+                onChange={handleChange}
+                required
+              />
+              {errors.fieldofexpertise && <p className="error">{errors.fieldofexpertise}</p>}
             </div>
             <div>
               <label>Qualification:</label>
               <input type="text" name="qualification" value={expert.qualification} onChange={handleChange} required />
+              {errors.qualification && <p className="error">{errors.qualification}</p>}
             </div>
             <div>
-              <label>Languages Spoken:</label>
-              <input type="text" name="languagesspoken" value={expert.languagesspoken} onChange={handleChange} required />
+              <label>Languages :</label>
+              <input
+                type="text"
+                name="languagesspoken"
+                value={expert.languagesspoken}
+                onChange={handleChange}
+                required
+              />
+              {errors.languagesspoken && <p className="error">{errors.languagesspoken}</p>}
             </div>
             <button type="submit">Sign Up</button>
           </form>
@@ -167,3 +252,5 @@ const Expertsignup = () => {
 };
 
 export default Expertsignup;
+
+

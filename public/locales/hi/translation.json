@@ -8,6 +8,7 @@
     "farmerlayout-myresponses": "मेरे उत्तर",
     "farmerlayout-connectwithsectors": "क्षेत्रों से जुड़ें",
     "farmerlayout-farmerexplorecontent": "कृषि सामग्री का अन्वेषण करें",
+    "farmerlayout-viewallloans": "सभी ऋण देखें",
 
 
 
@@ -24,5 +25,44 @@
     "farmerrequest-cropType": "फसल प्रकार:",
     "farmerrequest-requestDetails": "अनुरोध विवरण:",
     "farmerrequest-location": "स्थान (जिला, राज्य):",
-    "farmerrequest-submitRequest": "अनुरोध सबमिट करें"
+    "farmerrequest-submitRequest": "अनुरोध सबमिट करें",
+
+
+
+    
+        "loading": "लोड हो रहा है...",
+        "viewAllLoansTitle": "सभी ऋण देखें",
+        "viewAllLoansDescription": "यहां आप सभी उपलब्ध ऋण और उनके विवरण देख सकते हैं।",
+        "searchByLoanType": "ऋण प्रकार द्वारा खोजें...",
+        "sortByLoanType": "ऋण प्रकार के अनुसार छांटें",
+        "sortByMaxAmount": "अधिकतम राशि के अनुसार छांटें",
+        "sortByInterestRate": "ब्याज दर के अनुसार छांटें",
+        "loanID": "ऋण आईडी",
+        "interestRate": "ब्याज दर",
+        "maxAmount": "अधिकतम राशि",
+        "repaymentPeriod": "भुगतान अवधि",
+        "months": "महीने",
+
+
+        "youAreApplyingForLoan": "आप इस प्रकार के ऋण के लिए आवेदन कर रहे हैं",
+    "withInterestRate": "जिसकी ब्याज दर है",
+    "maximumAmount": "अधिकतम राशि है",
+    
+    "applyLoan": "ऋण के लिए आवेदन करें",
+
+
+
+
+    "applicantName": "आवेदक का नाम",
+    "email": "ईमेल",
+    "contactNumber": "संपर्क नंबर",
+    "uploadDocuments": "दस्तावेज़ अपलोड करें",
+    "uploadedImage": "अपलोड की गई छवि",
+    "submitApplication": "आवेदन सबमिट करें",
+    "formSubmissionSuccess": "फॉर्म सफलतापूर्वक सबमिट किया गया!",
+    "formSubmissionError": "फॉर्म सबमिट करने में त्रुटि। कृपया पुनः प्रयास करें।",
+    "profileFetchError": "प्रोफ़ाइल डेटा प्राप्त करने में त्रुटि।"
+
+    
+    
 }

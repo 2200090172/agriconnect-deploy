@@ -3,6 +3,7 @@ import "./Signin.css";
 import Signinlayout from "./Signinlayout";
 import axios from "axios"; // Import axios for making requests
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import config from './../../config';
 
 const Signin = () => {
   const [role, setRole] = useState("farmer"); // Default role
@@ -47,7 +48,7 @@ const Signin = () => {
 
         console.log("Attempting login with phoneNumber:", phoneNumber, "and password:", password);
 
-        const response = await axios.get("http://localhost:2005/farmerlogin", {
+        const response = await axios.get(`${config.url}/farmerlogin`, {
           params: {
             fcontact: phoneNumber,
             fpwd: password,
@@ -67,7 +68,7 @@ const Signin = () => {
 
         console.log("Attempting login with email:", email, "and password:", password);
 
-        const response = await axios.get("http://localhost:2005/expertlogin", {
+        const response = await axios.get(`${config.url}/expertlogin`, {
           params: {
             email: email,
             password: password,
@@ -87,7 +88,7 @@ const Signin = () => {
 
         console.log("Attempting login with username:", username, "and password:", password);
 
-        const response = await axios.get("http://localhost:2005/adminlogin", {
+        const response = await axios.get(`${config.url}/adminlogin`, {
           params: {
             username: username,
             password: password,
@@ -103,11 +104,40 @@ const Signin = () => {
           alert("Invalid username or password.");
         }
       }
+      else if(role=="financier")
+      {
+        const {email,password}=formData;
+        const response=await axios.get(`${config.url}/financierlogin`,{
+          params:{ 
+            email:email,
+            password:password,
+          },
+          withCredentials: true,
+        });
+
+        console.log("Response :",response);
+
+        if(response.data==1)
+        {
+          navigate("/financierhome")
+
+        }
+        else{
+          alert("Invalid Username or password")
+        }
+
+      }
     } catch (error) {
       console.error("Error during login:", error);
       alert("Failed to login. Please try again.");
     }
   };
+
+
+  const handleForgotPasswordNavigation =() =>
+  {
+    navigate('/forgotpassword')
+  }
 
   return (
     <Signinlayout>
@@ -227,8 +257,26 @@ const Signin = () => {
         </p>
       </div>
       
-    </div>
+    </div>    
   )}
+
+{role !== "admin" && (
+  <div className="additional-actions">
+    <div className="forgot-password-message">
+      <p>
+        Forgot Password ? 
+        <span
+          role="button"
+          onClick={handleForgotPasswordNavigation}
+          className="signup-link"
+        >
+         Lets change it!
+        </span>{" "}
+      </p>
+    </div>
+  </div>
+)}
+
 </div>
 
         </div>

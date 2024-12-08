@@ -1,0 +1,147 @@
+/* Header styling */
+.farmer-viewallloans-header {
+    min-height: 100vh;
+    background: url(../../assets/images/farmer-background.jpg) no-repeat center center / cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay styling */
+.farmer-viewallloans-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark shadow overlay */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Loans container with a scrollbar */
+.farmer-viewallloans-loans-container {
+    display: grid; /* Grid layout for cards */
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    gap: 20px; /* Space between cards */
+    max-height: 60vh; /* Restrict container height for scrollbar */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 15px;
+    /* background: #f9f9f9; */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional for styling */
+}
+
+/* Custom scrollbar for loans container */
+.farmer-viewallloans-loans-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.farmer-viewallloans-loans-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.farmer-viewallloans-loans-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Layout for individual loan cards */
+.farmer-viewallloans-loan-card {
+    background: #ffffff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    margin-bottom: 20px; /* Add space between cards */
+    height: 200px; /* Fixed height for each card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Shine animation effect on card */
+.farmer-viewallloans-loan-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: shine-animation 1s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes shine-animation {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Controls (search bar, sort dropdown) */
+.farmer-viewallloans-controls {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    z-index: 3;
+}
+
+/* Search bar styles */
+.farmer-viewallloans-search-bar {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.farmer-viewallloans-search-bar:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Sort dropdown styles */
+.farmer-viewallloans-sort-dropdown {
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    background-color: white;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+.farmer-viewallloans-apply-button {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.farmer-viewallloans-apply-button:hover {
+    background-color: #218838;
+}

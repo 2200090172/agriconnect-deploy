@@ -1,0 +1,125 @@
+/* General Styles for the Container */
+.viewallloanrequests-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px auto; /* Center the content with margin */
+    width: 80%; /* Reduce the container width to 80% of the screen */
+    max-width: 1200px; /* Add a maximum width for larger screens */
+    min-height: 600px; /* Ensure some height for the content */
+  }
+  
+  /* Sidebar Styles */
+  .viewallloanrequests-sidebar {
+    width: 25%; /* 25% width for the sidebar */
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .viewallloanrequests-sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .viewallloanrequests-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .viewallloanrequests-sidebar li {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+  }
+  
+  .viewallloanrequests-sidebar li:hover {
+    background-color: #444;
+    cursor: pointer;
+  }
+  
+  .viewallloanrequests-sidebar a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+  }
+  
+  /* Table Styling */
+  .viewallloanrequests-table {
+    width: 70%; /* 70% width for the table */
+    margin-left: 20px;
+    border-collapse: collapse;
+  }
+  
+  .viewallloanrequests-table th,
+  .viewallloanrequests-table td {
+    padding: 8px 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .viewallloanrequests-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .viewallloanrequests-table td {
+    font-size: 12px;
+  }
+  
+  .viewallloanrequests-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .viewallloanrequests-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  /* Action Buttons */
+  .viewallloanrequests-accept-button,
+  .viewallloanrequests-reject-button {
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .viewallloanrequests-accept-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .viewallloanrequests-accept-button:hover {
+    background-color: #218838;
+  }
+  
+  .viewallloanrequests-reject-button {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .viewallloanrequests-reject-button:hover {
+    background-color: #c82333;
+  }
+  
+  /* Loading/Error Message */
+  .viewallloanrequests-loading,
+  .viewallloanrequests-error {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* No Data Message */
+  .viewallloanrequests-no-data {
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    margin-top: 20px;
+  }
+  

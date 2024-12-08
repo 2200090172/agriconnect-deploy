@@ -1,0 +1,50 @@
+/* Header styling */
+.farmer-applyloan-header {
+    min-height: 100vh;
+    background: url(../../assets/images/farmer-background.jpg) no-repeat center center / cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay styling */
+.farmer-applyloan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark shadow overlay */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+.farmer-applyloan-loan-details-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e2e9;
+    border-radius: 10px;
+    border: 1px solid #dfe3e8;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 90%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.farmer-applyloan-loan-summary {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.farmer-applyloan-loan-summary strong {
+    color: #007bff;
+    font-weight: bold;
+}

@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './Viewallexperts.css';
 import AdminLayout from './Adminlayout';
 import axios from 'axios';
+import config from '../../config';
 
 const ViewallExperts = () => {
   const [experts, setExperts] = useState([]);
 
   const fetchExperts = async () => {
     try {
-      const response = await axios.get('http://localhost:2005/viewallexperts');
+      const response = await axios.get(`${config.url}/viewallexperts`);
       setExperts(response.data);
     } catch (error) {
       console.log(error.message);

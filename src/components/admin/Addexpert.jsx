@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Adminlayout from './Adminlayout';
 import './Addexpert.css'; // Include your form styling here
 import axios from 'axios';
+import config from '../../config';
 
 const Addexpert = () => {
   const [expert, setExpert] = useState({
@@ -26,7 +27,7 @@ const Addexpert = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:2005/addexpert", expert);
+      const response = await axios.post(`${config.url}/addexpert`, expert);
       
       if (response.data === 1) {
         alert("Expert added successfully");

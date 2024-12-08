@@ -22,7 +22,7 @@ const FarmerRequest = () => {
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const response = await axios.get('http://localhost:2005/checkfarmersession', {
+        const response = await axios.get(`${config.url}/checkfarmersession`, {
           withCredentials: true,
         });
         if (response.data === 0) {
@@ -65,7 +65,7 @@ const FarmerRequest = () => {
           requestdate: new Date(), 
         };
 
-        const response = await axios.post("http://localhost:2005/sendrequest", requestData, {
+        const response = await axios.post(`${config.url}/sendrequest`, requestData, {
           withCredentials: true,
         });
         if (response.status === 200) {

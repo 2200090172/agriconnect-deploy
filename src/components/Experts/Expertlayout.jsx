@@ -29,7 +29,7 @@ const Expertlayout = ({ children }) => {
       {
         alert("failed to remove session in backend, Contact Administrator!")
       }
-      navigate("/expertsignin");
+      navigate("/signin");
     } catch (error) {
       console.error("Error during logout:", error);
       alert("Failed to log out. Please try again.");
@@ -140,6 +140,15 @@ const Expertlayout = ({ children }) => {
               style={{ "--i": "0.2s" }}
             >
               Get Gemini Assistance
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/interactivemap"
+              activeClassName="active"
+              style={{ "--i": "0.25s" }}
+            >
+              Expore Interactive Map
             </NavLink>
           </li>
         </ul>

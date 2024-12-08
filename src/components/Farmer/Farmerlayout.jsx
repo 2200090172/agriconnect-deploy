@@ -25,7 +25,7 @@ const Farmerlayout = ({ children }) => {
       );
       if (response.data === 1) {
         alert(t("farmer-logoutsuccess")); // Use translation for success message
-        navigate("/farmersignin");
+        navigate("signin");
       } else {
         alert(t("farmer-logoutfailure")); // Use translation for failure message
       }
@@ -43,12 +43,12 @@ const Farmerlayout = ({ children }) => {
       setSessionActive(response.data);
       if (!response.data) {
         alert(t("farmerlayout-sessionexpired"));
-        navigate("/farmersignin");
+        navigate("/signin");
       }
     } catch (error) {
       console.error("Error checking session:", error);
       alert(t("farmerlayout-sessionerror"));
-      navigate("/farmersignin");
+      navigate("/signin");
     } finally {
       setIsLoading(false);
     }
@@ -126,11 +126,11 @@ const Farmerlayout = ({ children }) => {
           </li>
           <li>
             <NavLink
-              to="/connectwithsectors"
+              to="/farmer-viewallloans"
               activeClassName="active"
               style={{ "--i": "0.2s" }}
             >
-              {t("farmerlayout-connectwithsectors")}
+              {t("farmerlayout-viewallloans")}
             </NavLink>
           </li>
           <li>

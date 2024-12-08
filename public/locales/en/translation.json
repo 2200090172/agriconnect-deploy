@@ -6,6 +6,7 @@
     "farmerlayout-myresponses": "My Responses",
     "farmerlayout-connectwithsectors": "Connect with Sectors",
     "farmerlayout-farmerexplorecontent":"Explore farming content",
+    "farmerlayout-viewallloans": "View All Loans",
     
             
         "farmer-logoutsuccess": "You have been logged out successfully.",
@@ -23,6 +24,45 @@
     "farmerrequest-cropType": "Crop Type:",
     "farmerrequest-requestDetails": "Request Details:",
     "farmerrequest-location": "Location (District, State):",
-    "farmerrequest-submitRequest": "Submit Request"
+    "farmerrequest-submitRequest": "Submit Request",
+
+
+    
+        "loading": "Loading...",
+       
+        "viewAllLoansTitle": "View All Loans",
+        "viewAllLoansDescription": "Here you can explore all available loans and their details.",
+        "searchByLoanType": "Search by loan type...",
+        "sortByLoanType": "Sort by Loan Type",
+        "sortByMaxAmount": "Sort by Max Amount",
+        "sortByInterestRate": "Sort by Interest Rate",
+        "loanID": "Loan ID",
+        "interestRate": "Interest Rate",
+        "maxAmount": "Max Amount",
+       
+        "applyLoan": "Apply for Loan",
+
+    
+
+
+        "youAreApplyingForLoan": "You are applying for a loan of type",
+        "withInterestRate": "with an interest rate of",
+        "maximumAmount": "The maximum amount is",
+        "repaymentPeriod": "and the repayment period is",
+        "months": "months",
+
+
+
+
+        "applicantName": "Applicant Name",
+    "email": "Email",
+    "contactNumber": "Contact Number",
+    "uploadDocuments": "Upload Documents",
+    "uploadedImage": "Uploaded Image",
+    "submitApplication": "Submit Application",
+    "formSubmissionSuccess": "Form submitted successfully!",
+    "formSubmissionError": "Error submitting the form. Please try again.",
+    "profileFetchError": "Error fetching profile data."
+    
     
 }

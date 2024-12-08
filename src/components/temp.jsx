@@ -19,6 +19,7 @@ import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
+import config from '../config';
 
 
 const defaultTheme = createTheme();
@@ -44,7 +45,7 @@ const [isError,setIsError] = useState(false);
    const fetchData =  async () => {
     try
     {
-        const response = await axios.get('http://localhost:5000/checkusersession');
+        const response = await axios.get(`${config.url}/checkusersession`);
         if (response.status === 200) 
         {
           if(response.data === "")
@@ -74,14 +75,14 @@ const [isError,setIsError] = useState(false);
     }
 
     const logout = async () =>{
-       await axios.get('http://localhost:5000/logout')
+       await axios.get(`${config.url}/logout`)
        fetchData()
     }
 const UpdateUserProfile =  async(updatevalue) => 
 {  try{
   if(updatevalue === 1)
     {
-  const response = await axios.get('http://localhost:5000/checkusersession');
+  const response = await axios.get(`${config.url}/checkusersession`);
   if (response.status === 200) 
   {
     if(response.data === "")
@@ -102,7 +103,7 @@ const UpdateUserProfile =  async(updatevalue) =>
 }
 else
 {
-  const response2 = await axios.post('http://localhost:5000/userprofileupdate',User);
+  const response2 = await axios.post(`${config.url}/userprofileupdate`,User);
   if (response2.status === 200) 
     {
       if(response2.data === "")
@@ -110,7 +111,7 @@ else
         fetchData()
       }
       else if(response2.data === 1) {
-        await axios.get('http://localhost:5000/logout');
+        await axios.get(`${config.url}/logout`);
         fetchData()
       }
       else{

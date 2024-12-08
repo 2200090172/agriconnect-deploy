@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Signinlayout from './Signinlayout';
+import config from '../../config';
 
 const Adminlogin = () => {
     const navigate = useNavigate();
@@ -25,7 +26,7 @@ const Adminlogin = () => {
         try {
             console.log("Attempting login with username:", username, "and password:", password);
     
-            const response = await axios.get(`http://localhost:2005/adminlogin`, {
+            const response = await axios.get(`${config.url}/adminlogin`, {
                 params: {
                     username: username,
                     password: password
