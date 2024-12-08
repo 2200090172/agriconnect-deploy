@@ -1,4 +1,4 @@
 const config={
-"url":"http://localhost:2005"
+"url":"agriconnect-backend-deploy-production.up.railway.app"
 };
 export default config
