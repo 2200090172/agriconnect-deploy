@@ -264,7 +264,7 @@ const Signin = () => {
   <div className="additional-actions">
     <div className="forgot-password-message">
       <p>
-        Forgot Password ? 
+        Forgot Password ? No Worries
         <span
           role="button"
           onClick={handleForgotPasswordNavigation}
