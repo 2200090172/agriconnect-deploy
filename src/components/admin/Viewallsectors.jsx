@@ -1,41 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Viewallsectors.css';
 import AdminLayout from './Adminlayout';
-
-const sectorsData = [
-  { name: 'Financial Services', description: 'Banking and investment services.', services: 'Loans, Investments' },
-  { name: 'Agricultural Suppliers', description: 'Suppliers of seeds and fertilizers.', services: 'Seeds, Fertilizers' },
-  { name: 'Education', description: 'Educational services and institutions.', services: 'Tutoring, Online Courses' },
-];
+import axios from 'axios';
+import config from '../../config';
 
 const Viewallsectors = () => {
+  const [financiers, setFinanciers] = useState([]);
+
+  const fetchFinanciers = async () => {
+    try {
+      const response = await axios.get(`${config.url}/viewallfinanciers`);
+      setFinanciers(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchFinanciers();
+  }, []);
+
   return (
     <AdminLayout>
-    <div className="viewallsectors-container"> {/* Updated class name */}
-      <div className="viewallsectors-overlay"> {/* Added overlay */}
-        <div className="viewallsectors-content"> {/* Updated class name */}
-          <h2>View All Sectors</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Sector Name</th>
-                <th>Description</th>
-                <th>Services Offered</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sectorsData.map((sector, index) => (
-                <tr key={index}>
-                  <td>{sector.name}</td>
-                  <td>{sector.description}</td>
-                  <td>{sector.services}</td>
+      <div className="viewallsectors-container">
+        <div className="viewallsectors-overlay">
+          <div className="viewallsectors-content">
+            <h2>View All Financiers</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Contact</th>
+                  <th>Organization Name</th>
+                  <th>Location</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {financiers.map((financier, index) => (
+                  <tr key={index}>
+                    <td>{financier.name}</td>
+                    <td>{financier.email}</td>
+                    <td>{financier.contact}</td>
+                    <td>{financier.organizationname}</td>
+                    <td>{financier.location}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
     </AdminLayout>
   );
 };
