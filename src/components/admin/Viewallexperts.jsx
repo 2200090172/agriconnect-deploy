@@ -39,7 +39,7 @@ const ViewallExperts = () => {
               <tbody>
                 {experts.map((expert, index) => (
                   <tr key={index}>
-                    <td>{expert.name}</td>
+                    <td>{expert.fullname}</td>
                     <td>{expert.email}</td>
                     <td>{expert.phone}</td>
                     <td>{expert.experience}</td>
