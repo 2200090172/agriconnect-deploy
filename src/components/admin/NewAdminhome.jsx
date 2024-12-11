@@ -23,7 +23,7 @@ const Addfarmer = () => {
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const response = await axios.get('http://localhost:2005/checkadminsession', {
+        const response = await axios.get(`${config.url}/checkadminsession`, {
           withCredentials: true,
         });
 
