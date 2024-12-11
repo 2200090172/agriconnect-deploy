@@ -73,7 +73,7 @@ const Viewallfarmers = () => {
               <tbody>
                 {farmers.map((farmer, index) => (
                   <tr key={index}>
-                    <td>{farmer.name}</td>
+                    <td>{farmer.fullname}</td>
                     <td>{farmer.email}</td>
                     <td>{farmer.phone}</td>
                     <td>{farmer.location}</td>
