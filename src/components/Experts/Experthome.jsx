@@ -14,7 +14,7 @@ const Experthome = () => {
       const response = await axios.get(`${config.url}/checkexpertsession`, { withCredentials: true });
       if (response.data==0) {
         alert("Session expired. Please log in again.");
-        navigate('/expertsignin');
+        navigate('/signin');
       }
     } catch (error) {
       console.error("Error checking session:", error);
