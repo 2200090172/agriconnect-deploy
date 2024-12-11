@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Addloan.css';
 import Financierlayout from './Financierlayout';
 import axios from 'axios';
@@ -7,8 +7,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Addloan = () => {
     const navigate = useNavigate();
-    const [loading, setLoading] = useState(true);
-
     const [loanDetails, setLoanDetails] = useState({
         loantype: '',
         interestrate: '',
@@ -16,29 +14,6 @@ const Addloan = () => {
         repaymentperiod: '',
         documentsrequired: '',
     });
-
-    useEffect(() => {
-        const checkSession = async () => {
-            try {
-                const response = await axios.get(`${config.url}/checkfinanciersession`, {
-                    withCredentials: true,
-                });
-
-                if (response.data === 0) {
-                    alert('You are no longer accessible to this page, Please Login again!!');
-                    navigate('/signin');
-                }
-            } catch (error) {
-                console.error('Error checking session:', error);
-                alert('Error checking session. Please try again.');
-                navigate('/signin');
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        checkSession();
-    }, [navigate]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -65,10 +40,6 @@ const Addloan = () => {
         }
     };
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
     return (
         <Financierlayout>
             <header className="financier-addloan-header">
@@ -85,14 +56,12 @@ const Addloan = () => {
                                 onChange={handleChange}
                                 required
                             >
-                               <option value="">Select Loan Type</option>
-                                    <option value="Crop Production Loan">Crop Production Loan</option>
-                                    <option value="Farm Equipment Loan">Farm Equipment Loan</option>
-                                    <option value="Irrigation Loan">Irrigation Loan</option>
-                                    <option value="Greenhouse Loan">Greenhouse Loan</option>
-                                    <option value="Soil Improvement Loan">Soil Improvement Loan</option>
-
-
+                                <option value="">Select Loan Type</option>
+                                <option value="Crop Production Loan">Crop Production Loan</option>
+                                <option value="Farm Equipment Loan">Farm Equipment Loan</option>
+                                <option value="Irrigation Loan">Irrigation Loan</option>
+                                <option value="Greenhouse Loan">Greenhouse Loan</option>
+                                <option value="Soil Improvement Loan">Soil Improvement Loan</option>
                             </select>
                         </div>
 
