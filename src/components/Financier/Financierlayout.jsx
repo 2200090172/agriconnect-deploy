@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Financierlayout = ({ children }) => {
   const [isActive, setIsActive] = useState(false);
+  const navigate=useNavigate();
 
   const toggleMenu = () => {
     setIsActive(!isActive);
   };
+
+  const handleLogout= () =>{
+    navigate('/signin')
+  }
 
   return (
     <div className={`container ${isActive ? "active" : ""}`}>
@@ -19,6 +24,9 @@ const Financierlayout = ({ children }) => {
             <div className="bar"></div>
           </div>
         </div>
+        <span className="logout-button" onClick={handleLogout}>
+          Logout
+        </span>
       </div>
 
       <div className="main-container">
