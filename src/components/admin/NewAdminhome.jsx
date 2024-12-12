@@ -29,12 +29,12 @@ const Addfarmer = () => {
 
         if (response.data === 0) {
           alert("Session Expired, Please Login again!!");
-          navigate('/adminlogin');
+          navigate('/signin');
         }
       } catch (error) {
         console.error("Error checking session:", error);
         alert("Error checking session. Please try again.");
-        navigate('/adminlogin');
+        navigate('/signin');
       }
     };
     checkSession();
