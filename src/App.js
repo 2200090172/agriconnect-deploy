@@ -47,8 +47,11 @@ import Farmerviewallloans from './components/Farmer/Farmerviewallloans.jsx';
 import ApplyLoan from './components/Farmer/Applyloan.jsx';
 import Forgotpassword from './components/signin/Forgotpassword.jsx';
 import Resetpassword from './components/signin/Resetpassword.jsx';
-import { Viewallloanrequests } from './components/Financier/Viewallloanrequests.jsx';
-import InteractiveMap from './components/Experts/Interactivemap.jsx';
+import Publicsignup from './components/signin/Publicsignup.jsx';
+import ExploreContent from './components/user/ExploreContent.jsx';
+import Learnaboutfarming from './components/user/Learnaboutfarming.jsx';
+import Discussionforum from './components/user/Discussionforum.jsx'
+
 
 
 function App() {
@@ -105,7 +108,6 @@ function App() {
        <Route path="/expertresponses" element={<Expertresponses />}/> 
        <Route path='/expertcontent' element={<Expertcontent />} />
        <Route path='/expertgemini' element={<Expertgemini />} />
-       <Route path='/interactivemap' element={<InteractiveMap />} />
 
 
 
@@ -114,13 +116,18 @@ function App() {
        <Route path='/financierhome' element={<Financierhome />} />
        <Route path='/addloan' element={<Addloan />} />
        <Route path='/viewallloans' element={<Viewallloans />} />
-       <Route path='/viewallloanrequests' element={<Viewallloanrequests />} />
 
 
 
 
 
        <Route path="/userhome" element={<Userhome />}/> 
+       <Route path="/publicsignup" element={<Publicsignup/>}/>
+       <Route path="/explorecontent" element={<ExploreContent/>}/>
+       <Route path="/Learnaboutfarming" element={<Learnaboutfarming/>}/>
+       <Route path="/forum" element={<Discussionforum/>}/>
+
+      
 
        
 
