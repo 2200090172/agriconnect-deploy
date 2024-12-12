@@ -1,0 +1,65 @@
+/* Container for the User Home Page */
+.user-header {
+    min-height: 100vh;
+    background: url(../../assets/images/user-background.jpg) no-repeat center center / cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark shadow overlay */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Styling for the Welcome message (user's name) */
+.user-overlay h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+    color: white; /* Ensure the text stands out against the dark overlay */
+}
+
+/* Optional styling for the paragraph, can be used for additional user info or greetings */
+.user-overlay p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 10px;
+    color: white;
+}
+
+/* Session checking/loading/error messages */
+.loading, .session-error {
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.session-error {
+    color: red;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .user-overlay h1 {
+        font-size: 2.5rem; /* Adjust for smaller screens */
+    }
+
+    .user-overlay p {
+        font-size: 1.2rem;
+    }
+}

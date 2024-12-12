@@ -1,0 +1,125 @@
+/* CSS for the ExploreContent component */
+.content-section {
+    padding: 20px;
+    background: linear-gradient(135deg, black, #20252c); /* Gradient background */
+    min-height: 100vh; /* Ensures the background covers the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.content-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+  
+.content-item {
+    width: 30%;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: green; /* Background color for articles */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+    position: relative;
+}
+  
+.content-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px black;
+}
+  
+.article-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+  
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+  
+.article-details {
+    margin-top: 20px;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideUp 1s ease forwards 0.5s;
+    color: black; /* Set all text in article details to black */
+}
+  
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+  
+.article-details h3 {
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+  
+.article-details h3:hover {
+    color: #4caf50;
+}
+  
+.article-details p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    color: black; /* Black text for article content */
+}
+  
+.article-details p:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+  
+button {
+    padding: 10px;
+    background-color: #2db732;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+}
+  
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+  
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(88, 15, 206, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    transition: width 0.6s ease, height 0.6s ease;
+}
+  
+button:hover::before {
+    width: 200%;
+    height: 200%;
+}
