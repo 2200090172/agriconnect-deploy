@@ -43,7 +43,7 @@ const Approveexpert = () => {
       <div className="approve-expert-container">
         <div className="approve-expert-overlay">
           <div className="approve-expert-content">
-            <h2>View All Experts</h2>
+            <h2>View All Expert Requests</h2>
             <table>
               <thead>
                 <tr>
